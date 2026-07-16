@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ExternalLink } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/ui/container";
 import { Badge } from "@/components/ui/card";
@@ -58,6 +59,18 @@ export default async function ProjectDetailPage({
         <p className="mt-4 max-w-2xl text-lg text-ink/70">
           {localized.summary}
         </p>
+      )}
+
+      {project.project_url && (
+        <a
+          href={project.project_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-royal-bright px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-royal"
+        >
+          {t("visitProject")}
+          <ExternalLink className="h-4 w-4" />
+        </a>
       )}
 
       {project.cover_image_url && (

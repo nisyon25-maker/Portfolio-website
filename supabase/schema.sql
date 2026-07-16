@@ -28,6 +28,7 @@ create table if not exists projects (
   problem text,
   solution text,
   outcome text,
+  project_url text,
   tech_stack text[] not null default '{}',
   cover_image_url text,
   gallery_urls text[] not null default '{}',
@@ -50,9 +51,29 @@ create table if not exists blog_posts (
   content text not null,
   cover_image_url text,
   tags text[] not null default '{}',
+  -- SEO overrides (fall back to title/excerpt when blank)
+  meta_title text,
+  meta_description text,
   translations jsonb not null default '{}'::jsonb,
   status content_status not null default 'draft',
   published_at timestamptz,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+-- ---------------------------------------------------------------------------
+-- services (CMS-managed list shown on the Services page)
+-- ---------------------------------------------------------------------------
+create table if not exists services (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  slug text not null unique,
+  description text,
+  icon_key text not null default 'sparkles',
+  link_url text,
+  translations jsonb not null default '{}'::jsonb,
+  status content_status not null default 'draft',
+  sort_order integer not null default 0,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -130,11 +151,16 @@ drop trigger if exists trg_blog_posts_updated_at on blog_posts;
 create trigger trg_blog_posts_updated_at before update on blog_posts
   for each row execute function set_updated_at();
 
+drop trigger if exists trg_services_updated_at on services;
+create trigger trg_services_updated_at before update on services
+  for each row execute function set_updated_at();
+
 -- ---------------------------------------------------------------------------
 -- Row Level Security
 -- ---------------------------------------------------------------------------
 alter table projects enable row level security;
 alter table blog_posts enable row level security;
+alter table services enable row level security;
 alter table testimonials enable row level security;
 alter table pricing_packages enable row level security;
 alter table contact_submissions enable row level security;
@@ -147,6 +173,10 @@ create policy "public_read_published_projects" on projects
 
 drop policy if exists "public_read_published_blog_posts" on blog_posts;
 create policy "public_read_published_blog_posts" on blog_posts
+  for select using (status = 'published');
+
+drop policy if exists "public_read_published_services" on services;
+create policy "public_read_published_services" on services
   for select using (status = 'published');
 
 drop policy if exists "public_read_published_testimonials" on testimonials;
@@ -168,6 +198,10 @@ create policy "admin_all_projects" on projects
 
 drop policy if exists "admin_all_blog_posts" on blog_posts;
 create policy "admin_all_blog_posts" on blog_posts
+  for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+
+drop policy if exists "admin_all_services" on services;
+create policy "admin_all_services" on services
   for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
 
 drop policy if exists "admin_all_testimonials" on testimonials;

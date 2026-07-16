@@ -22,6 +22,7 @@ function fromForm(formData: FormData) {
     problem: String(formData.get("problem") ?? "") || null,
     solution: String(formData.get("solution") ?? "") || null,
     outcome: String(formData.get("outcome") ?? "") || null,
+    project_url: String(formData.get("project_url") ?? "") || null,
     tech_stack: parseTags(formData.get("tech_stack")),
     status: String(formData.get("status") ?? "draft") as ContentStatus,
     sort_order: Number(formData.get("sort_order") ?? 0),

@@ -3,13 +3,16 @@ import { isSupabaseConfigured } from "@/lib/env";
 import {
   DEFAULT_CONTACT,
   DEFAULT_SOCIALS,
+  DEFAULT_SEO,
   type ContactConfig,
   type SocialsConfig,
+  type SeoConfig,
 } from "@/lib/site-config";
 import type {
   BlogPost,
   PricingPackage,
   Project,
+  Service,
   ServiceCategory,
   Testimonial,
 } from "@/lib/types";
@@ -100,6 +103,23 @@ export async function getSiteSetting(key: string) {
     .eq("key", key)
     .maybeSingle();
   return data?.value ?? null;
+}
+
+export async function getPublishedServices() {
+  if (!isSupabaseConfigured) return [] as Service[];
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("services")
+    .select("*")
+    .eq("status", "published")
+    .order("sort_order", { ascending: true });
+  return (data ?? []) as Service[];
+}
+
+/** Global SEO defaults, editable in the admin Settings page. Falls back to defaults. */
+export async function getSiteSeo(): Promise<SeoConfig> {
+  const stored = (await getSiteSetting("seo")) as Partial<SeoConfig> | null;
+  return { ...DEFAULT_SEO, ...(stored ?? {}) };
 }
 
 /** Contact details, editable in the admin Settings page. Falls back to defaults. */

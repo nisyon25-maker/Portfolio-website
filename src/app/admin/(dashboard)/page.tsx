@@ -12,7 +12,8 @@ async function count(supabase: Awaited<ReturnType<typeof createClient>>, table: 
 
 export default async function AdminOverviewPage() {
   const supabase = await createClient();
-  const [projects, posts, testimonials, newMessages] = await Promise.all([
+  const [services, projects, posts, testimonials, newMessages] = await Promise.all([
+    count(supabase, "services"),
     count(supabase, "projects"),
     count(supabase, "blog_posts"),
     count(supabase, "testimonials"),
@@ -24,6 +25,7 @@ export default async function AdminOverviewPage() {
   ]);
 
   const stats = [
+    { label: "Services", value: services, href: "/admin/services" },
     { label: "Projects", value: projects, href: "/admin/projects" },
     { label: "Blog posts", value: posts, href: "/admin/blog" },
     { label: "Testimonials", value: testimonials, href: "/admin/testimonials" },
@@ -33,7 +35,7 @@ export default async function AdminOverviewPage() {
   return (
     <div>
       <h1 className="text-2xl font-semibold">Overview</h1>
-      <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {stats.map((stat) => (
           <Link
             key={stat.label}

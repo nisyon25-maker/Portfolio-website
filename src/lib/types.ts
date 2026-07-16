@@ -19,6 +19,7 @@ export interface Project {
   problem: string | null;
   solution: string | null;
   outcome: string | null;
+  project_url: string | null;
   tech_stack: string[];
   cover_image_url: string | null;
   gallery_urls: string[];
@@ -37,9 +38,25 @@ export interface BlogPost {
   content: string;
   cover_image_url: string | null;
   tags: string[];
+  meta_title: string | null;
+  meta_description: string | null;
   translations: Translations;
   status: ContentStatus;
   published_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Service {
+  id: string;
+  title: string;
+  slug: string;
+  description: string | null;
+  icon_key: string;
+  link_url: string | null;
+  translations: Translations;
+  status: ContentStatus;
+  sort_order: number;
   created_at: string;
   updated_at: string;
 }

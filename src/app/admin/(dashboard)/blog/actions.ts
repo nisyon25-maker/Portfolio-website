@@ -22,6 +22,8 @@ function fromForm(formData: FormData) {
     excerpt: String(formData.get("excerpt") ?? "") || null,
     content: String(formData.get("content") ?? ""),
     tags: parseTags(formData.get("tags")),
+    meta_title: String(formData.get("meta_title") ?? "") || null,
+    meta_description: String(formData.get("meta_description") ?? "") || null,
     status,
     published_at:
       status === "published" ? existingPublishedAt ?? new Date().toISOString() : null,

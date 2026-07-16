@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   FolderKanban,
   Newspaper,
+  Wrench,
   Quote,
   Mail,
   Settings,
@@ -16,6 +17,7 @@ import { logout } from "@/app/admin/login/actions";
 
 const links = [
   { href: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
+  { href: "/admin/services", label: "Services", icon: Wrench },
   { href: "/admin/projects", label: "Projects", icon: FolderKanban },
   { href: "/admin/blog", label: "Blog", icon: Newspaper },
   { href: "/admin/testimonials", label: "Testimonials", icon: Quote },

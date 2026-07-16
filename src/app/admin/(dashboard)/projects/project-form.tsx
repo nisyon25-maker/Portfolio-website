@@ -29,8 +29,12 @@ export default function ProjectForm({
         </Select>
       </Field>
 
-      <Field label="Summary" htmlFor="summary">
-        <Textarea id="summary" name="summary" rows={2} defaultValue={project?.summary ?? ""} />
+      <Field label="Description / Summary" htmlFor="summary" hint="Short description shown on cards and at the top of the case study.">
+        <Textarea id="summary" name="summary" rows={3} defaultValue={project?.summary ?? ""} />
+      </Field>
+
+      <Field label="Project URL" htmlFor="project_url" hint="Live link to the project (optional), e.g. https://example.com">
+        <Input id="project_url" name="project_url" type="url" placeholder="https://" defaultValue={project?.project_url ?? ""} />
       </Field>
 
       <Field label="Problem" htmlFor="problem">

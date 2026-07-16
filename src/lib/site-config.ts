@@ -7,6 +7,22 @@ export type ContactConfig = {
 
 export type SocialsConfig = Record<string, string>;
 
+export type SeoConfig = {
+  title: string;
+  description: string;
+  keywords: string;
+  ogImageUrl: string;
+};
+
+export const DEFAULT_SEO: SeoConfig = {
+  title: "Nishan Yonjan — IT Entrepreneur & Digital Marketing Expert",
+  description:
+    "Nishan Yonjan — IT entrepreneur and digital marketing expert building brands online across web, mobile, AI automation, and marketing.",
+  keywords:
+    "Nishan Yonjan, web development, mobile app development, AI automation, digital marketing, Nepal",
+  ogImageUrl: "",
+};
+
 export const DEFAULT_CONTACT: ContactConfig = {
   location: "Kathmandu, Nepal",
   phone: "+977-9705515425",

@@ -1,7 +1,7 @@
-import { getSiteContact, getSiteSocials, getSiteSetting } from "@/lib/data";
+import { getSiteContact, getSiteSocials, getSiteSeo, getSiteSetting } from "@/lib/data";
 import { SOCIAL_PLATFORMS } from "@/lib/site-config";
-import { Field, Input } from "@/components/admin/form-fields";
-import { uploadResume, saveContact, saveSocials } from "./actions";
+import { Field, Input, Textarea } from "@/components/admin/form-fields";
+import { uploadResume, saveContact, saveSocials, saveSeo } from "./actions";
 
 export const metadata = { title: "Settings" };
 
@@ -11,9 +11,10 @@ const saveBtnClass =
   "rounded-full bg-slate-900 px-6 py-2.5 text-sm font-medium text-white dark:bg-white dark:text-slate-900";
 
 export default async function AdminSettingsPage() {
-  const [contact, socials, resume] = await Promise.all([
+  const [contact, socials, seo, resume] = await Promise.all([
     getSiteContact(),
     getSiteSocials(),
+    getSiteSeo(),
     getSiteSetting("resume") as Promise<{ url?: string } | null>,
   ]);
   const resumeUrl = resume?.url;
@@ -21,6 +22,31 @@ export default async function AdminSettingsPage() {
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Settings</h1>
+
+      {/* SEO */}
+      <section className={cardClass}>
+        <h2 className="font-semibold">SEO</h2>
+        <p className="mt-1 text-sm text-slate-500">
+          Default title, description, and social preview for the whole site.
+        </p>
+        <form action={saveSeo} className="mt-5 space-y-5">
+          <Field label="Site title" htmlFor="title">
+            <Input id="title" name="title" defaultValue={seo.title} />
+          </Field>
+          <Field label="Meta description" htmlFor="description" hint="~155 characters recommended.">
+            <Textarea id="description" name="description" rows={2} defaultValue={seo.description} />
+          </Field>
+          <Field label="Keywords" htmlFor="keywords" hint="Comma-separated.">
+            <Input id="keywords" name="keywords" defaultValue={seo.keywords} />
+          </Field>
+          <Field label="Social preview image URL" htmlFor="ogImageUrl" hint="Used for link previews (Open Graph). Optional.">
+            <Input id="ogImageUrl" name="ogImageUrl" type="url" placeholder="https://" defaultValue={seo.ogImageUrl} />
+          </Field>
+          <button type="submit" className={saveBtnClass}>
+            Save SEO
+          </button>
+        </form>
+      </section>
 
       {/* Contact details */}
       <section className={cardClass}>

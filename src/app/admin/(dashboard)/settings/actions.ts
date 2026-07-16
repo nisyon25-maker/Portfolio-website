@@ -43,6 +43,22 @@ export async function saveContact(formData: FormData) {
   revalidateSite();
 }
 
+export async function saveSeo(formData: FormData) {
+  const supabase = await createClient();
+  const value = {
+    title: String(formData.get("title") ?? "").trim(),
+    description: String(formData.get("description") ?? "").trim(),
+    keywords: String(formData.get("keywords") ?? "").trim(),
+    ogImageUrl: String(formData.get("ogImageUrl") ?? "").trim(),
+  };
+
+  await supabase
+    .from("site_settings")
+    .upsert({ key: "seo", value, updated_at: new Date().toISOString() });
+
+  revalidateSite();
+}
+
 export async function saveSocials(formData: FormData) {
   const supabase = await createClient();
   const value: Record<string, string> = {};

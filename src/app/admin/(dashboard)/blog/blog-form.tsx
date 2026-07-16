@@ -34,6 +34,22 @@ export default function BlogForm({
         <input id="cover_image" name="cover_image" type="file" accept="image/*" className="mt-2 block text-sm" />
       </Field>
 
+      <div className="rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+        <p className="text-sm font-semibold">SEO</p>
+        <p className="mt-1 text-xs text-slate-500">
+          Controls the browser tab title and search/social preview. Leave blank to
+          use the post title and excerpt.
+        </p>
+        <div className="mt-4 space-y-4">
+          <Field label="Meta title" htmlFor="meta_title" hint="~60 characters recommended.">
+            <Input id="meta_title" name="meta_title" defaultValue={post?.meta_title ?? ""} />
+          </Field>
+          <Field label="Meta description" htmlFor="meta_description" hint="~155 characters recommended.">
+            <Textarea id="meta_description" name="meta_description" rows={2} defaultValue={post?.meta_description ?? ""} />
+          </Field>
+        </div>
+      </div>
+
       <Field label="Status" htmlFor="status">
         <Select id="status" name="status" defaultValue={post?.status ?? "draft"}>
           <option value="draft">Draft</option>

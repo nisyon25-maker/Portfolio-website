@@ -18,8 +18,8 @@ Next.js (App Router) + TypeScript + Tailwind CSS + Supabase portfolio and admin 
    ```
 2. Create a Supabase project at [supabase.com](https://supabase.com).
 3. Copy `.env.example` to `.env.local` and fill in your Supabase URL and anon key (Project Settings → API).
-4. Run `supabase/schema.sql` in the Supabase SQL editor (or `supabase db push` if using the CLI). This creates all tables, RLS policies, storage buckets, and a few seed pricing packages.
-5. Create your admin user: Supabase dashboard → Authentication → Users → **Add user** (email + password). This is the only account with write access — there is no public sign-up.
+4. Run `supabase/schema.sql` in the Supabase SQL editor (or `supabase db push` if using the CLI). This creates all tables, RLS policies, storage buckets, and default contact/socials settings. (If you set the database up before the admin-features update, run `supabase/migration-admin-features.sql` instead — it adds the new columns and the `services` table without touching existing data.)
+5. **Create your admin login:** Supabase dashboard → Authentication → Users → **Add user**, and enter the email + password you want to sign in with (e.g. `admin@gmail.com` / your chosen password). Tick "Auto Confirm User". This is the only account with write access — there is no public sign-up, and the login only accepts credentials that exist here. The password lives in Supabase's auth system, never in the code.
 6. Run the dev server:
    ```
    npm run dev
@@ -36,10 +36,12 @@ Next.js (App Router) + TypeScript + Tailwind CSS + Supabase portfolio and admin 
 
 Everything below is done from `/admin` after signing in — no code changes or redeploys required.
 
-- **Add a project / case study:** Admin → Projects → New project. Fill in title, slug, category, problem/solution/outcome, tech stack, and a cover image. Set status to "Published" to make it live.
-- **Write a blog post:** Admin → Blog → New post. Content supports Markdown. Draft posts are never shown publicly.
+- **Manage services:** Admin → Services → New service. Give it a title, description, an icon, and an optional link. Published services replace the four built-in ones on the public Services page; if you add none, the site shows the four defaults.
+- **Add a project / case study:** Admin → Projects → New project. Fill in title, slug, category, description, a **live project URL** (shown as a "Visit project" button), problem/solution/outcome, tech stack, and a cover image. Set status to "Published" to make it live.
+- **Write a blog post:** Admin → Blog → New post. Content supports Markdown. Each post has an **SEO** section (meta title + description) that controls its search/social preview — leave blank to use the title and excerpt. Draft posts are never shown publicly.
 - **Add a testimonial:** Admin → Testimonials → New testimonial.
-- **Read contact form submissions:** Admin → Messages. Mark as read/responded as you work through them.
+- **Read contact form submissions:** Admin → Messages. Every message sent through the site's contact form lands here; mark as read/responded as you work through them.
+- **Site-wide SEO:** Admin → Settings → SEO. Set the default title, meta description, keywords, and social-preview image for the whole site.
 - **Edit contact details:** Admin → Settings → Contact details. Update location, phone, WhatsApp number, and email — changes appear in the hero and footer across the whole site.
 - **Manage social media links:** Admin → Settings → Social media links. Paste the full URL for LinkedIn, Instagram, Facebook, X, YouTube, TikTok, GitHub, or your website. Any field left blank is hidden from the site; the matching icon shows automatically for the ones you fill in.
 - **Replace your resume/CV:** Admin → Settings → upload a new PDF; it immediately replaces the download link on the About page.

@@ -5,7 +5,15 @@
       "Bash(cd \"C:\\\\Users\\\\USER\\\\ortfolio website\" && rm -rf \"src/app/[locale]/pricing\" \"src/app/admin/\\(dashboard\\)/pricing\" && echo \"deleted\" && ls \"src/app/[locale]\" && echo \"---admin---\" && ls \"src/app/admin/\\(dashboard\\)\")",
       "Bash(node -e \"const l=require\\('lucide-react'\\); const k=Object.keys\\(l\\); console.log\\('total',k.length\\); console.log\\(k.filter\\(n=>/link|linked/i.test\\(n\\)\\)\\);\")",
       "Bash(ls -lt \"C:/Users/USER/Downloads\" 2>/dev/null | grep -iE \"\\\\.\\(png|jpe?g|webp|svg\\)\" | head -6; echo \"--- clipboard/temp scan ---\"; find \"C:/Users/USER/AppData/Local/Temp\" -maxdepth 3 -type f \\\\\\( -iname \"*.png\" -o -iname \"*.svg\" \\\\\\) -newermt \"2026-07-16 19:00\" 2>/dev/null | head -10)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git config *)",
+      "Bash(git commit -q -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git ls-remote *)",
+      "Bash(echo \"--- exit: $? ---\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\USER\\\\ortfolio website\\\\src\\\\app\\\\admin\\\\\\(dashboard\\)\\\\services\\\\new\" \"C:\\\\Users\\\\USER\\\\ortfolio website\\\\src\\\\app\\\\admin\\\\\\(dashboard\\)\\\\services\\\\[id]\")",
+      "Bash(git add *)"
     ]
   }
 }

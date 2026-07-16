@@ -17,7 +17,17 @@ export async function generateMetadata({
   const post = await getBlogPostBySlug(slug);
   if (!post) return {};
   const localized = localize(post, locale, ["title", "excerpt"]);
-  return { title: localized.title, description: localized.excerpt ?? undefined };
+  const title = post.meta_title || localized.title;
+  const description = post.meta_description || localized.excerpt || undefined;
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: post.cover_image_url ? [post.cover_image_url] : undefined,
+    },
+  };
 }
 
 export default async function BlogPostPage({

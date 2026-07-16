@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { getSiteSeo } from "@/lib/data";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import SetHtmlLang from "@/components/set-html-lang";
@@ -35,13 +36,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "brand" });
+  const seo = await getSiteSeo();
 
   return {
     title: {
-      default: `${t("name")} — ${t("tagline")}`,
+      default: seo.title || `${t("name")} — ${t("tagline")}`,
       template: `%s — ${t("name")}`,
     },
-    description: t("tagline"),
+    description: seo.description,
+    keywords: seo.keywords || undefined,
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      images: seo.ogImageUrl ? [seo.ogImageUrl] : undefined,
+      type: "website",
+    },
   };
 }
 
