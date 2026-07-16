@@ -25,9 +25,9 @@
   --royal-bright: #2f49c7;
   --cream: #f4efe1;
   --cream-soft: #ece4d0;
-  --ink: #0e1533;
+  --ink: #0f172a;
 
-  --background: var(--cream);
+  --background: #f7f5ef;
   --foreground: var(--ink);
 }
 
@@ -48,6 +48,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+a {
+  color: var(--royal-bright);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
 }
 
 /* Editorial display serif helper */

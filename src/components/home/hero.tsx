@@ -17,25 +17,25 @@ export default async function Hero() {
   ]);
 
   return (
-    <section className="relative overflow-hidden bg-royal-deep text-cream">
-      <div className="pointer-events-none absolute -left-28 top-8 h-72 w-72 rounded-full bg-royal-bright/30 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-28 h-72 w-72 rounded-full bg-royal/40 blur-3xl" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-royal-bright/10 blur-3xl" />
+    <section className="relative overflow-hidden bg-cream text-ink">
+      <div className="pointer-events-none absolute -left-28 top-8 h-72 w-72 rounded-full bg-royal-bright/10 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-28 h-72 w-72 rounded-full bg-royal/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-royal-bright/5 blur-3xl" />
 
       <Container className="relative py-16 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_420px_minmax(0,0.65fr)] lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_420px_minmax(0,0.7fr)] lg:items-center">
           <div className="space-y-8 text-center lg:text-left animate-fade-up">
             <p className="text-sm uppercase tracking-[0.35em] text-cream/60">
               {t("heroGreeting")}
             </p>
 
             <div className="overflow-hidden">
-              <h1 className="font-display text-5xl uppercase tracking-[0.35em] leading-[0.95] text-cream sm:text-6xl lg:text-7xl">
+              <h1 className="font-display text-[clamp(4.5rem,10vw,10rem)] uppercase tracking-[0.2em] leading-[0.9] text-royal-bright">
                 {tBrand("name")}
               </h1>
             </div>
 
-            <p className="max-w-2xl text-xl leading-tight text-cream/80 sm:text-2xl">
+            <p className="max-w-2xl text-lg leading-[1.3] text-ink/75 sm:text-xl">
               {tBrand("tagline")}
             </p>
 
@@ -54,8 +54,8 @@ export default async function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[28rem] animate-fade-up animate-fade-up-delay-200">
-            <div className="absolute inset-x-0 bottom-0 h-60 rounded-[2.5rem] bg-cream/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-cream/20 bg-royal/5 shadow-[0_35px_90px_rgba(0,0,0,0.22)]">
+            <div className="absolute inset-x-0 bottom-0 h-60 rounded-[2.5rem] bg-royal-bright/10 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
               <Image
                 src="/new img.jpeg"
                 alt={tBrand("name")}
@@ -68,11 +68,11 @@ export default async function Hero() {
           </div>
 
           <div className="space-y-8 text-center lg:text-left animate-fade-up animate-fade-up-delay-300">
-            <p className="text-xs uppercase tracking-[0.28em] text-cream/60">
+            <p className="text-xs uppercase tracking-[0.28em] text-ink/50">
               {t("heroEyebrow")}
             </p>
 
-            <p className="mx-auto max-w-sm text-sm leading-relaxed text-cream/80 lg:mx-0">
+            <p className="mx-auto max-w-sm text-sm leading-relaxed text-ink/70 lg:mx-0">
               {t("heroBio")}
             </p>
 
