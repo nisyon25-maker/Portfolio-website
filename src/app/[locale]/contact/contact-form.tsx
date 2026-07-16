@@ -27,7 +27,7 @@ export default function ContactForm() {
   return (
     <form action={formAction} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium">
+        <label htmlFor="name" className="block text-sm font-medium text-ink/85">
           {t("name")}
         </label>
         <input
@@ -36,12 +36,12 @@ export default function ContactForm() {
           type="text"
           required
           maxLength={200}
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
+          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium">
+        <label htmlFor="email" className="block text-sm font-medium text-ink/85">
           {t("email")}
         </label>
         <input
@@ -50,19 +50,19 @@ export default function ContactForm() {
           type="email"
           required
           maxLength={320}
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
+          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
         />
       </div>
 
       <div>
-        <label htmlFor="serviceInterest" className="block text-sm font-medium">
+        <label htmlFor="serviceInterest" className="block text-sm font-medium text-ink/85">
           {t("serviceInterest")}
         </label>
         <select
           id="serviceInterest"
           name="serviceInterest"
           defaultValue=""
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900"
+          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink"
         >
           <option value="">{t("serviceInterestPlaceholder")}</option>
           {ALL_SERVICE_CATEGORIES.map((category) => (
@@ -74,7 +74,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium">
+        <label htmlFor="message" className="block text-sm font-medium text-ink/85">
           {t("message")}
         </label>
         <textarea
@@ -83,7 +83,7 @@ export default function ContactForm() {
           required
           rows={5}
           maxLength={5000}
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
+          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
         />
       </div>
 

@@ -19,14 +19,8 @@ export default function ProjectForm({
         <Input id="slug" name="slug" required defaultValue={project?.slug} />
       </Field>
 
-      <Field label="Category" htmlFor="category">
-        <Select id="category" name="category" defaultValue={project?.category ?? "web_development"}>
-          {ALL_SERVICE_CATEGORIES.map((category) => (
-            <option key={category} value={category}>
-              {categoryToCamel(category)}
-            </option>
-          ))}
-        </Select>
+      <Field label="Category" htmlFor="category" hint="Write the category yourself, e.g. web development or AI automation">
+        <Input id="category" name="category" placeholder="e.g. Web Development" defaultValue={project?.category ? categoryToCamel(project.category) : ""} />
       </Field>
 
       <Field label="Description / Summary" htmlFor="summary" hint="Short description shown on cards and at the top of the case study.">
@@ -53,7 +47,7 @@ export default function ProjectForm({
         <Input id="tech_stack" name="tech_stack" defaultValue={project?.tech_stack?.join(", ")} />
       </Field>
 
-      <Field label="Cover image" htmlFor="cover_image" hint={project?.cover_image_url ? "Uploading a new file replaces the current image." : undefined}>
+      <Field label="Project image" htmlFor="cover_image" hint="Optional. If omitted, the project card/detail view will use the project URL preview when available.">
         <input id="cover_image" name="cover_image" type="file" accept="image/*" className="mt-2 block text-sm" />
       </Field>
 
@@ -71,7 +65,7 @@ export default function ProjectForm({
 
       <button
         type="submit"
-        className="rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white dark:bg-white dark:text-slate-900"
+        className="rounded-full bg-royal-bright px-6 py-3 text-sm font-medium text-cream transition hover:bg-royal-bright/90"
       >
         Save project
       </button>

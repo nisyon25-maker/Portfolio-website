@@ -6,9 +6,9 @@ import { uploadResume, saveContact, saveSocials, saveSeo } from "./actions";
 export const metadata = { title: "Settings" };
 
 const cardClass =
-  "max-w-2xl rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900";
+  "max-w-2xl rounded-xl border border-ink/10 bg-white p-6";
 const saveBtnClass =
-  "rounded-full bg-slate-900 px-6 py-2.5 text-sm font-medium text-white dark:bg-white dark:text-slate-900";
+  "rounded-full bg-royal-bright px-6 py-2.5 text-sm font-medium text-cream transition hover:bg-royal-bright/90";
 
 export default async function AdminSettingsPage() {
   const [contact, socials, seo, resume] = await Promise.all([
@@ -26,7 +26,7 @@ export default async function AdminSettingsPage() {
       {/* SEO */}
       <section className={cardClass}>
         <h2 className="font-semibold">SEO</h2>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-ink/60">
           Default title, description, and social preview for the whole site.
         </p>
         <form action={saveSeo} className="mt-5 space-y-5">
@@ -51,7 +51,7 @@ export default async function AdminSettingsPage() {
       {/* Contact details */}
       <section className={cardClass}>
         <h2 className="font-semibold">Contact details</h2>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-ink/60">
           Shown in the hero and footer across the site.
         </p>
         <form action={saveContact} className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -82,7 +82,7 @@ export default async function AdminSettingsPage() {
       {/* Social links */}
       <section className={cardClass}>
         <h2 className="font-semibold">Social media links</h2>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-ink/60">
           Paste the full URL for each platform. Empty fields are hidden from the site.
         </p>
         <form action={saveSocials} className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -108,7 +108,7 @@ export default async function AdminSettingsPage() {
       {/* Resume / CV */}
       <section className={cardClass}>
         <h2 className="font-semibold">Resume / CV</h2>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-ink/60">
           Powers the download button on the About page.
         </p>
 

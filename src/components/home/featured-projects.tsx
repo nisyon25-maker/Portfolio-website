@@ -10,10 +10,10 @@ export default function FeaturedProjects({ projects }: { projects: Project[] }) 
   if (projects.length === 0) return null;
 
   return (
-    <Section className="border-t border-royal/10">
+    <Section className="border-t border-ink/10 bg-cream">
       <div className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
             {t("featuredProjectsTitle")}
           </h2>
           <p className="mt-3 text-ink/70">{t("featuredProjectsSubtitle")}</p>

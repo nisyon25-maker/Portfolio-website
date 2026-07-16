@@ -4,11 +4,13 @@ import { Link } from "@/i18n/navigation";
 import { Card, Badge } from "@/components/ui/card";
 import { localize } from "@/lib/data";
 import type { Project } from "@/lib/types";
+import { getProjectCoverImage } from "@/lib/utils";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const tServices = useTranslations("services");
   const locale = useLocale();
   const localized = localize(project, locale, ["title", "summary"]);
+  const coverImage = getProjectCoverImage(project);
   const categoryKey = project.category.replace(/_([a-z])/g, (_, c: string) =>
     c.toUpperCase()
   );
@@ -16,10 +18,10 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.slug}`}>
       <Card className="flex h-full flex-col overflow-hidden p-0">
-        <div className="relative aspect-video w-full bg-royal/10">
-          {project.cover_image_url && (
+        <div className="relative aspect-video w-full bg-royal-bright/10">
+          {coverImage && (
             <Image
-              src={project.cover_image_url}
+              src={coverImage}
               alt={localized.title}
               fill
               className="object-cover"
@@ -27,7 +29,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
         <div className="flex flex-1 flex-col p-6">
-          <Badge className="mb-3 w-fit">{tServices(categoryKey)}</Badge>
+          <Badge className="mb-3 w-fit bg-royal-bright/10 text-royal-bright">
+            {tServices(categoryKey)}
+          </Badge>
           <h3 className="text-lg font-semibold text-ink">{localized.title}</h3>
           {localized.summary && (
             <p className="mt-2 line-clamp-3 text-sm text-ink/70">

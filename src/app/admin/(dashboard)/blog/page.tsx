@@ -16,18 +16,18 @@ export default async function AdminBlogPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">Blog</h1>
+        <h1 className="text-2xl font-semibold text-ink">Blog</h1>
         <Link
           href="/admin/blog/new"
-          className="rounded-full bg-slate-900 px-5 py-2 text-sm font-medium text-white dark:bg-white dark:text-slate-900"
+          className="rounded-full bg-royal-bright px-5 py-2 text-sm font-medium text-cream transition hover:bg-royal-bright/90"
         >
           New post
         </Link>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+      <div className="mt-6 overflow-hidden rounded-xl border border-ink/10 bg-white">
         <table className="w-full text-left text-sm">
-          <thead className="bg-slate-50 text-slate-500 dark:bg-slate-900">
+          <thead className="bg-cream text-ink/60">
             <tr>
               <th className="px-4 py-3">Title</th>
               <th className="px-4 py-3">Status</th>
@@ -36,12 +36,12 @@ export default async function AdminBlogPage() {
           </thead>
           <tbody>
             {posts.map((post) => (
-              <tr key={post.id} className="border-t border-slate-200 dark:border-slate-800">
-                <td className="px-4 py-3 font-medium">{post.title}</td>
+              <tr key={post.id} className="border-t border-ink/10">
+                <td className="px-4 py-3 font-medium text-ink">{post.title}</td>
                 <td className="px-4 py-3">
                   <span
                     className={
-                      post.status === "published" ? "text-green-600" : "text-slate-400"
+                      post.status === "published" ? "text-royal-bright" : "text-ink/50"
                     }
                   >
                     {post.status}
@@ -50,7 +50,7 @@ export default async function AdminBlogPage() {
                 <td className="px-4 py-3 text-right">
                   <Link
                     href={`/admin/blog/${post.id}`}
-                    className="text-slate-600 hover:underline dark:text-slate-300"
+                    className="text-royal-bright hover:underline"
                   >
                     Edit
                   </Link>
@@ -64,7 +64,7 @@ export default async function AdminBlogPage() {
             ))}
             {posts.length === 0 && (
               <tr>
-                <td className="px-4 py-6 text-slate-400" colSpan={3}>
+                <td className="px-4 py-6 text-ink/50" colSpan={3}>
                   No blog posts yet.
                 </td>
               </tr>

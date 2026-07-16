@@ -18,10 +18,10 @@ export default function CategoryFilter({
 
   const pillClass = (isActive: boolean) =>
     cn(
-      "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+      "rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
       isActive
         ? "bg-royal-bright text-cream"
-        : "bg-royal/5 text-ink/80 hover:bg-royal/10"
+        : "bg-ink/10 text-ink/80 hover:bg-ink/20"
     );
 
   return (

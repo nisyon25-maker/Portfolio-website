@@ -34,7 +34,7 @@ export default async function ServicesPage({
   return (
     <Section>
       <div className="text-center">
-        <h1 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
           {t("overviewTitle")}
         </h1>
         <p className="mt-4 text-lg text-ink/70">{t("overviewSubtitle")}</p>
@@ -47,10 +47,10 @@ export default async function ServicesPage({
               const Icon = serviceIcon(service.icon_key);
               const inner = (
                 <Card className="h-full">
-                  <div className="mb-4 inline-flex rounded-xl bg-royal/10 p-3">
-                    <Icon className="h-6 w-6 text-royal" />
+                  <div className="mb-4 inline-flex rounded-xl bg-royal-bright/10 p-3">
+                    <Icon className="h-6 w-6 text-royal-bright" />
                   </div>
-                  <h2 className="text-xl font-semibold">{localized.title}</h2>
+                  <h2 className="text-xl font-semibold text-ink">{localized.title}</h2>
                   {localized.description && (
                     <p className="mt-2 text-sm text-ink/70">{localized.description}</p>
                   )}
@@ -70,8 +70,8 @@ export default async function ServicesPage({
               return (
                 <Link key={category} href={`/services/${SERVICE_SLUGS[category]}`}>
                   <Card className="h-full">
-                    <div className="mb-4 inline-flex rounded-xl bg-royal/10 p-3">
-                      <Icon className="h-6 w-6 text-royal" />
+                    <div className="mb-4 inline-flex rounded-xl bg-royal-bright/10 p-3">
+                      <Icon className="h-6 w-6 text-royal-bright" />
                     </div>
                     <h2 className="text-xl font-semibold">{t(key)}</h2>
                     <p className="mt-2 text-sm text-ink/70">{t(`${key}Desc`)}</p>

@@ -11,9 +11,9 @@ export default function AdminLoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center px-6">
-      <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 dark:border-slate-800 dark:bg-slate-900">
-        <h1 className="text-xl font-semibold">Admin sign in</h1>
-        <p className="mt-1 text-sm text-slate-500">
+      <div className="w-full max-w-sm rounded-2xl border border-ink/10 bg-white p-8">
+        <h1 className="text-xl font-semibold text-ink">Admin sign in</h1>
+        <p className="mt-1 text-sm text-ink/60">
           Sign in to manage your portfolio content.
         </p>
         <div className="mt-6">

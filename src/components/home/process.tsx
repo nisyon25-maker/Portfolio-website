@@ -7,13 +7,13 @@ export default function Process() {
   const steps = tp.raw("steps") as { title: string; desc: string }[];
 
   return (
-    <section className="bg-royal-deep py-16 text-cream sm:py-24">
+    <section className="bg-white py-16 sm:py-24">
       <Container>
         <div className="mb-12 text-center">
-          <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
             {t("processTitle")}
           </h2>
-          <p className="mt-3 text-cream/70">{t("processSubtitle")}</p>
+          <p className="mt-3 text-ink/70">{t("processSubtitle")}</p>
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
@@ -22,7 +22,7 @@ export default function Process() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm text-cream/70">{step.desc}</p>
+              <p className="mt-2 text-sm text-ink/70">{step.desc}</p>
             </div>
           ))}
         </div>

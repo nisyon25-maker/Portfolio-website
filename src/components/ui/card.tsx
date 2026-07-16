@@ -10,7 +10,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-royal/15 bg-white/60 p-6 shadow-sm transition-all hover:border-royal/40 hover:shadow-md",
+        "rounded-2xl border border-ink/10 bg-white p-6 shadow-sm transition duration-200 hover:border-royal-bright/20 hover:shadow-lg",
         className
       )}
     >
@@ -29,7 +29,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full bg-royal/10 px-3 py-1 text-xs font-medium text-royal",
+        "inline-flex items-center rounded-full bg-royal-bright/10 px-3 py-1 text-xs font-medium text-royal-bright",
         className
       )}
     >

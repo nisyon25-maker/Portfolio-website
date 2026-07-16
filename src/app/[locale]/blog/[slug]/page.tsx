@@ -57,7 +57,7 @@ export default async function BlogPostPage({
           <Badge key={tag}>{tag}</Badge>
         ))}
       </div>
-      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
+      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
         {localized.title}
       </h1>
       {post.published_at && (
@@ -67,7 +67,7 @@ export default async function BlogPostPage({
       )}
 
       {post.cover_image_url && (
-        <div className="relative mt-10 aspect-video w-full overflow-hidden rounded-2xl bg-royal/5">
+        <div className="relative mt-10 aspect-video w-full overflow-hidden rounded-2xl bg-royal-bright/10">
           <Image
             src={post.cover_image_url}
             alt={localized.title}
@@ -77,7 +77,7 @@ export default async function BlogPostPage({
         </div>
       )}
 
-      <article className="prose prose-slate mt-10 max-w-none">
+      <article className="prose prose-slate mt-10 max-w-none text-ink">
         <ReactMarkdown>{localized.content}</ReactMarkdown>
       </article>
     </Section>

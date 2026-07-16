@@ -30,13 +30,9 @@ export default function BlogForm({
         <Input id="tags" name="tags" defaultValue={post?.tags?.join(", ")} />
       </Field>
 
-      <Field label="Cover image" htmlFor="cover_image" hint={post?.cover_image_url ? "Uploading a new file replaces the current image." : undefined}>
-        <input id="cover_image" name="cover_image" type="file" accept="image/*" className="mt-2 block text-sm" />
-      </Field>
-
-      <div className="rounded-lg border border-slate-200 p-4 dark:border-slate-800">
-        <p className="text-sm font-semibold">SEO</p>
-        <p className="mt-1 text-xs text-slate-500">
+      <div className="rounded-lg border border-ink/10 p-4">
+        <p className="text-sm font-semibold text-ink">SEO</p>
+        <p className="mt-1 text-xs text-ink/50">
           Controls the browser tab title and search/social preview. Leave blank to
           use the post title and excerpt.
         </p>
@@ -61,7 +57,7 @@ export default function BlogForm({
 
       <button
         type="submit"
-        className="rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white dark:bg-white dark:text-slate-900"
+        className="rounded-full bg-royal-bright px-6 py-3 text-sm font-medium text-cream transition hover:bg-royal-bright/90"
       >
         Save post
       </button>

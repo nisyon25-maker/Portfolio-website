@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { uploadToBucket } from "@/lib/supabase/upload";
-import type { ContentStatus, ServiceCategory } from "@/lib/types";
+import type { ContentStatus } from "@/lib/types";
 
 function parseTags(value: FormDataEntryValue | null) {
   return String(value ?? "")
@@ -13,11 +13,19 @@ function parseTags(value: FormDataEntryValue | null) {
     .filter(Boolean);
 }
 
+function normalizeCategory(value: string) {
+  const normalized = value.trim().toLowerCase();
+  if (normalized.includes("mobile")) return "mobile_app_development";
+  if (normalized.includes("ai") || normalized.includes("automation")) return "ai_business_automation";
+  if (normalized.includes("marketing") || normalized.includes("seo")) return "digital_marketing";
+  return "web_development";
+}
+
 function fromForm(formData: FormData) {
   return {
     title: String(formData.get("title") ?? ""),
     slug: String(formData.get("slug") ?? ""),
-    category: String(formData.get("category") ?? "web_development") as ServiceCategory,
+    category: normalizeCategory(String(formData.get("category") ?? "web_development")),
     summary: String(formData.get("summary") ?? "") || null,
     problem: String(formData.get("problem") ?? "") || null,
     solution: String(formData.get("solution") ?? "") || null,

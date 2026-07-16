@@ -40,7 +40,7 @@ export default function TestimonialForm({
       </div>
       <button
         type="submit"
-        className="rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white dark:bg-white dark:text-slate-900"
+        className="rounded-full bg-royal-bright px-6 py-3 text-sm font-medium text-cream transition hover:bg-royal-bright/90"
       >
         Save testimonial
       </button>

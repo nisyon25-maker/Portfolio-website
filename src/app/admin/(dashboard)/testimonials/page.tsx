@@ -16,18 +16,18 @@ export default async function AdminTestimonialsPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">Testimonials</h1>
+        <h1 className="text-2xl font-semibold text-ink">Testimonials</h1>
         <Link
           href="/admin/testimonials/new"
-          className="rounded-full bg-slate-900 px-5 py-2 text-sm font-medium text-white dark:bg-white dark:text-slate-900"
+          className="rounded-full bg-royal-bright px-5 py-2 text-sm font-medium text-cream transition hover:bg-royal-bright/90"
         >
           New testimonial
         </Link>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+      <div className="mt-6 overflow-hidden rounded-xl border border-ink/10 bg-white">
         <table className="w-full text-left text-sm">
-          <thead className="bg-slate-50 text-slate-500 dark:bg-slate-900">
+          <thead className="bg-cream text-ink/60">
             <tr>
               <th className="px-4 py-3">Name</th>
               <th className="px-4 py-3">Status</th>
@@ -36,12 +36,12 @@ export default async function AdminTestimonialsPage() {
           </thead>
           <tbody>
             {testimonials.map((testimonial) => (
-              <tr key={testimonial.id} className="border-t border-slate-200 dark:border-slate-800">
-                <td className="px-4 py-3 font-medium">{testimonial.name}</td>
+              <tr key={testimonial.id} className="border-t border-ink/10">
+                <td className="px-4 py-3 font-medium text-ink">{testimonial.name}</td>
                 <td className="px-4 py-3">
                   <span
                     className={
-                      testimonial.status === "published" ? "text-green-600" : "text-slate-400"
+                      testimonial.status === "published" ? "text-royal-bright" : "text-ink/50"
                     }
                   >
                     {testimonial.status}
@@ -50,7 +50,7 @@ export default async function AdminTestimonialsPage() {
                 <td className="px-4 py-3 text-right">
                   <Link
                     href={`/admin/testimonials/${testimonial.id}`}
-                    className="text-slate-600 hover:underline dark:text-slate-300"
+                    className="text-royal-bright hover:underline"
                   >
                     Edit
                   </Link>
@@ -64,7 +64,7 @@ export default async function AdminTestimonialsPage() {
             ))}
             {testimonials.length === 0 && (
               <tr>
-                <td className="px-4 py-6 text-slate-400" colSpan={3}>
+                <td className="px-4 py-6 text-ink/50" colSpan={3}>
                   No testimonials yet.
                 </td>
               </tr>

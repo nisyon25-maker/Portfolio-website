@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
 import { getProjectBySlug, localize } from "@/lib/data";
 import { categoryToCamel } from "@/lib/services-content";
+import { getProjectCoverImage } from "@/lib/utils";
 
 export async function generateMetadata({
   params,
@@ -32,6 +33,7 @@ export default async function ProjectDetailPage({
 
   const t = await getTranslations("projects");
   const tServices = await getTranslations("services");
+  const coverImage = getProjectCoverImage(project);
   const localized = localize(project, locale, [
     "title",
     "summary",
@@ -52,7 +54,7 @@ export default async function ProjectDetailPage({
       <Badge className="mt-6 w-fit">
         {tServices(categoryToCamel(project.category))}
       </Badge>
-      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
+      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
         {localized.title}
       </h1>
       {localized.summary && (
@@ -66,17 +68,17 @@ export default async function ProjectDetailPage({
           href={project.project_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-full bg-royal-bright px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-royal"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-royal-bright px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-royal-bright/90"
         >
           {t("visitProject")}
           <ExternalLink className="h-4 w-4" />
         </a>
       )}
 
-      {project.cover_image_url && (
-        <div className="relative mt-10 aspect-video w-full overflow-hidden rounded-2xl bg-royal/5">
+      {coverImage && (
+        <div className="relative mt-10 aspect-video w-full overflow-hidden rounded-2xl bg-royal-bright/10">
           <Image
-            src={project.cover_image_url}
+            src={coverImage}
             alt={localized.title}
             fill
             className="object-cover"
@@ -126,7 +128,7 @@ export default async function ProjectDetailPage({
             {project.tech_stack.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full bg-royal/5 px-3 py-1 text-sm"
+                className="rounded-full bg-royal-bright/10 px-3 py-1 text-sm text-ink/70"
               >
                 {tech}
               </span>
@@ -140,7 +142,7 @@ export default async function ProjectDetailPage({
           {project.gallery_urls.map((url) => (
             <div
               key={url}
-              className="relative aspect-video overflow-hidden rounded-xl bg-royal/5"
+              className="relative aspect-video overflow-hidden rounded-xl bg-royal-bright/10"
             >
               <Image src={url} alt={localized.title} fill className="object-cover" />
             </div>

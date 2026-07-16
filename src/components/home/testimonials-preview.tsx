@@ -17,7 +17,7 @@ export default async function TestimonialsPreview() {
       <Container>
         <div className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
+            <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
               {t("testimonialsTitle")}
             </h2>
             <p className="mt-3 text-ink/70">{t("testimonialsSubtitle")}</p>
@@ -32,13 +32,13 @@ export default async function TestimonialsPreview() {
             return (
               <div
                 key={testimonial.id}
-                className="rounded-2xl border border-royal/15 bg-white/60 p-6"
+                className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"
               >
-                <Quote className="h-6 w-6 text-royal/40" />
+                <Quote className="h-6 w-6 text-ink/40" />
                 <p className="mt-4 text-ink/80">&ldquo;{localized.quote}&rdquo;</p>
                 <div className="mt-6 flex items-center gap-3">
                   {testimonial.avatar_url && (
-                    <div className="relative h-10 w-10 overflow-hidden rounded-full bg-royal/10">
+                    <div className="relative h-10 w-10 overflow-hidden rounded-full bg-royal-bright/10">
                       <Image
                         src={testimonial.avatar_url}
                         alt={testimonial.name}

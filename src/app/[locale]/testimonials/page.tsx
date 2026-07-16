@@ -27,7 +27,7 @@ export default async function TestimonialsPage({
 
   return (
     <Section>
-      <h1 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">{t("title")}</h1>
+      <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t("title")}</h1>
       <p className="mt-4 max-w-2xl text-lg text-ink/70">
         {t("subtitle")}
       </p>
@@ -46,7 +46,7 @@ export default async function TestimonialsPage({
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   {testimonial.avatar_url && (
-                    <div className="relative h-10 w-10 overflow-hidden rounded-full bg-royal/5">
+                    <div className="relative h-10 w-10 overflow-hidden rounded-full bg-royal-bright/10">
                       <Image
                         src={testimonial.avatar_url}
                         alt={testimonial.name}

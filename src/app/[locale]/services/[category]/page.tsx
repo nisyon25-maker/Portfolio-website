@@ -52,8 +52,8 @@ export default async function ServiceDetailPage({
 
   return (
     <Section>
-      <Icon className="h-10 w-10" />
-      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">{t(key)}</h1>
+      <Icon className="h-10 w-10 text-royal-bright" />
+      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t(key)}</h1>
       <p className="mt-4 max-w-2xl text-lg text-ink/70">
         {t(`${key}Desc`)}
       </p>
@@ -79,7 +79,7 @@ export default async function ServiceDetailPage({
             {tools.map((tool) => (
               <span
                 key={tool}
-                className="rounded-full bg-royal/5 px-3 py-1 text-sm"
+                className="rounded-full bg-royal-bright/10 px-3 py-1 text-sm text-ink/70"
               >
                 {tool}
               </span>

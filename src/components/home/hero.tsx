@@ -19,23 +19,23 @@ export default async function Hero() {
   return (
     <section className="relative overflow-hidden bg-cream text-ink">
       <div className="pointer-events-none absolute -left-28 top-8 h-72 w-72 rounded-full bg-royal-bright/10 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-28 h-72 w-72 rounded-full bg-royal/10 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-28 h-72 w-72 rounded-full bg-royal-bright/10 blur-3xl" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-royal-bright/5 blur-3xl" />
 
-      <Container className="relative py-16 lg:py-24">
+      <Container className="relative py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_420px_minmax(0,0.7fr)] lg:items-center">
           <div className="space-y-8 text-center lg:text-left animate-fade-up">
-            <p className="text-sm uppercase tracking-[0.35em] text-cream/60">
+            <p className="text-sm uppercase tracking-[0.35em] text-ink/50">
               {t("heroGreeting")}
             </p>
 
             <div className="overflow-hidden">
-              <h1 className="font-display text-[clamp(4.5rem,10vw,10rem)] uppercase tracking-[0.2em] leading-[0.9] text-royal-bright">
+              <h1 className="font-display text-[clamp(4.5rem,10vw,10rem)] uppercase tracking-[0.18em] leading-[0.88] text-royal-bright">
                 {tBrand("name")}
               </h1>
             </div>
 
-            <p className="max-w-2xl text-lg leading-[1.3] text-ink/75 sm:text-xl">
+            <p className="max-w-2xl text-xl leading-[1.35] text-ink/75 sm:text-2xl">
               {tBrand("tagline")}
             </p>
 
@@ -53,9 +53,9 @@ export default async function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[28rem] animate-fade-up animate-fade-up-delay-200">
-            <div className="absolute inset-x-0 bottom-0 h-60 rounded-[2.5rem] bg-royal-bright/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
+          <div className="relative mx-auto w-full max-w-[30rem] animate-fade-up animate-fade-up-delay-200">
+            <div className="absolute inset-x-0 bottom-0 h-64 rounded-[2.5rem] bg-royal-bright/10 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white shadow-[0_35px_90px_rgba(15,23,42,0.1)]">
               <Image
                 src="/new img.jpeg"
                 alt={tBrand("name")}
@@ -77,13 +77,13 @@ export default async function Hero() {
             </p>
 
             <ul className="mx-auto flex max-w-sm flex-col items-center gap-3 text-sm lg:mx-0 lg:items-start">
-              <li className="flex items-center gap-3">
+              <li className="flex items-center gap-3 text-ink/75">
                 <MapPin className="h-4 w-4 shrink-0 text-royal-bright" />
                 <span>{contact.location}</span>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-center gap-3 text-ink/75">
                 <Phone className="h-4 w-4 shrink-0 text-royal-bright" />
-                <a href={telHref(contact.phone)} className="hover:text-cream">
+                <a href={telHref(contact.phone)} className="text-ink/80 transition hover:text-ink">
                   {contact.phone}
                 </a>
               </li>
@@ -104,7 +104,7 @@ export default async function Hero() {
 
             <SocialLinks
               socials={socials}
-              className="justify-center text-cream/80 lg:justify-start"
+              className="justify-center text-ink/70 lg:justify-start"
             />
           </div>
         </div>

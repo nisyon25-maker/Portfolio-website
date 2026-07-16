@@ -10,10 +10,10 @@ export default function Values() {
   const items = tv.raw("items") as { title: string; desc: string }[];
 
   return (
-    <section className="bg-cream py-16 sm:py-24">
+    <section className="bg-white py-16 sm:py-24">
       <Container>
         <div className="mb-12 text-center">
-          <h2 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
             {t("valuesTitle")}
           </h2>
           <p className="mt-3 text-ink/70">{t("valuesSubtitle")}</p>
@@ -24,10 +24,10 @@ export default function Values() {
             return (
               <div
                 key={item.title}
-                className="rounded-2xl border border-royal/15 bg-white/60 p-6"
+                className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"
               >
-                <div className="mb-4 inline-flex rounded-xl bg-royal/10 p-3">
-                  <Icon className="h-6 w-6 text-royal" />
+                <div className="mb-4 inline-flex rounded-xl bg-royal-bright/10 p-3">
+                  <Icon className="h-6 w-6 text-royal-bright" />
                 </div>
                 <h3 className="font-semibold text-ink">{item.title}</h3>
                 <p className="mt-2 text-sm text-ink/70">{item.desc}</p>

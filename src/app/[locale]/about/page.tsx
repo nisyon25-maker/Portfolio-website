@@ -27,7 +27,7 @@ export default async function AboutPage({
 
   return (
     <Section>
-      <h1 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">{t("title")}</h1>
+      <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t("title")}</h1>
       <p className="mt-6 max-w-3xl text-lg text-ink/70">
         {tServices("overviewSubtitle")}
       </p>
@@ -47,8 +47,8 @@ export default async function AboutPage({
         })}
       </div>
 
-      <div className="mt-16 rounded-2xl border border-royal/10 p-8 text-center">
-        <h2 className="text-xl font-semibold">{t("resumeTitle")}</h2>
+      <div className="mt-16 rounded-2xl border border-ink/10 bg-white p-8 text-center shadow-sm">
+        <h2 className="text-xl font-semibold text-ink">{t("resumeTitle")}</h2>
         <p className="mt-2 text-ink/70">
           {t("resumeDesc")}
         </p>
@@ -57,7 +57,7 @@ export default async function AboutPage({
             href={resume.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center justify-center rounded-full bg-royal-bright px-6 py-3 text-sm font-medium text-cream hover:bg-royal"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-royal-bright px-6 py-3 text-sm font-semibold text-cream transition hover:bg-royal-bright/90"
           >
             {t("downloadResume")}
           </a>

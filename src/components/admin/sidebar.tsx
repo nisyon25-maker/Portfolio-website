@@ -7,7 +7,6 @@ import {
   FolderKanban,
   Newspaper,
   Wrench,
-  Quote,
   Mail,
   Settings,
   LogOut,
@@ -20,7 +19,6 @@ const links = [
   { href: "/admin/services", label: "Services", icon: Wrench },
   { href: "/admin/projects", label: "Projects", icon: FolderKanban },
   { href: "/admin/blog", label: "Blog", icon: Newspaper },
-  { href: "/admin/testimonials", label: "Testimonials", icon: Quote },
   { href: "/admin/messages", label: "Messages", icon: Mail },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
@@ -29,7 +27,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="flex w-64 shrink-0 flex-col border-r border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+    <aside className="flex w-64 shrink-0 flex-col border-r border-ink/10 bg-white p-4">
       <p className="px-2 py-2 text-sm font-semibold">Admin</p>
       <nav className="mt-4 flex-1 space-y-1">
         {links.map(({ href, label, icon: Icon, exact }) => {
@@ -41,8 +39,8 @@ export default function Sidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 active
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
-                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                  ? "bg-royal-bright text-cream"
+                  : "text-ink/70 hover:bg-cream/60"
               )}
             >
               <Icon size={16} />
@@ -54,7 +52,7 @@ export default function Sidebar() {
       <form action={logout}>
         <button
           type="submit"
-          className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+          className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-ink/70 hover:bg-cream/60"
         >
           <LogOut size={16} />
           Sign out
