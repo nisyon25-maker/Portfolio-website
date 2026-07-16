@@ -22,10 +22,10 @@ export default async function ContactPage({
   const t = await getTranslations("contact");
 
   return (
-    <Section>
+    <Section className="bg-royal text-cream">
       <div className="mx-auto max-w-xl">
-        <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t("title")}</h1>
-        <p className="mt-4 text-lg text-ink/70">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">{t("title")}</h1>
+        <p className="mt-4 text-lg text-cream/85">
           {t("subtitle")}
         </p>
         <div className="mt-10">

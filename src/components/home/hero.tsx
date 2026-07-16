@@ -25,17 +25,17 @@ export default async function Hero() {
       <Container className="relative py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_420px_minmax(0,0.7fr)] lg:items-center">
           <div className="space-y-8 text-center lg:text-left animate-fade-up">
-            <p className="text-sm uppercase tracking-[0.35em] text-cream/75">
+            <p className="text-sm uppercase tracking-[0.35em] text-cream/80">
               {t("heroGreeting")}
             </p>
 
             <div className="overflow-hidden">
-              <h1 className="font-display text-[clamp(4.5rem,10vw,10rem)] uppercase tracking-[0.18em] leading-[0.88] text-cream">
+              <h1 className="font-display text-[clamp(5rem,10vw,10rem)] uppercase tracking-[0.18em] leading-[0.88] text-cream drop-shadow-[0_16px_50px_rgba(0,0,0,0.35)]">
                 {tBrand("name")}
               </h1>
             </div>
 
-            <p className="max-w-2xl text-xl leading-[1.35] text-cream/85 sm:text-2xl">
+            <p className="max-w-2xl text-xl leading-[1.35] text-cream/95 sm:text-2xl">
               {tBrand("tagline")}
             </p>
 
