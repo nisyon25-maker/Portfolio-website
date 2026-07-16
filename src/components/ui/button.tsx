@@ -8,9 +8,9 @@ const variantClasses: Record<Variant, string> = {
   primary:
     "inline-flex items-center justify-center gap-2 rounded-full bg-royal-bright px-6 py-3 text-sm font-semibold text-cream transition-colors duration-200 hover:bg-royal-bright/90",
   secondary:
-    "inline-flex items-center justify-center gap-2 rounded-full border border-cream/30 bg-cream/10 px-6 py-3 text-sm font-semibold text-cream transition-colors duration-200 hover:border-cream hover:bg-cream/15",
+    "inline-flex items-center justify-center gap-2 rounded-full border border-royal-bright/20 bg-cream px-6 py-3 text-sm font-semibold text-royal-bright transition-colors duration-200 hover:border-royal-bright hover:bg-cream/80",
   ghost:
-    "inline-flex items-center justify-center gap-2 rounded-full bg-transparent px-6 py-3 text-sm font-semibold text-cream/80 transition-colors duration-200 hover:text-cream",
+    "inline-flex items-center justify-center gap-2 rounded-full bg-transparent px-6 py-3 text-sm font-semibold text-royal-bright transition-colors duration-200 hover:text-royal",
 };
 
 const base =

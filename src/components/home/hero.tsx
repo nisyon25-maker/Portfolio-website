@@ -76,25 +76,25 @@ export default async function Hero() {
               {t("heroBio")}
             </p>
 
-            <ul className="mx-auto flex max-w-sm flex-col items-center gap-3 text-sm lg:mx-0 lg:items-start">
-              <li className="flex items-center gap-3 text-ink/75">
-                <MapPin className="h-4 w-4 shrink-0 text-royal-bright" />
+            <ul className="mx-auto flex max-w-sm flex-col items-center gap-3 text-sm text-cream/95 lg:mx-0 lg:items-start">
+              <li className="flex items-center gap-3 text-cream/95">
+                <MapPin className="h-4 w-4 shrink-0 text-cream" />
                 <span>{contact.location}</span>
               </li>
-              <li className="flex items-center gap-3 text-cream/80">
+              <li className="flex items-center gap-3 text-cream/95">
                 <Phone className="h-4 w-4 shrink-0 text-cream" />
-                <a href={telHref(contact.phone)} className="text-cream/90 transition hover:text-cream">
+                <a href={telHref(contact.phone)} className="text-cream/100 transition hover:text-cream">
                   {contact.phone}
                 </a>
               </li>
               {contact.whatsapp && (
-                <li className="flex items-center gap-3 text-cream/85">
+                <li className="flex items-center gap-3 text-cream/95">
                   <WhatsAppIcon className="h-4 w-4 shrink-0 text-cream" />
                   <a
                     href={whatsappHref(contact.whatsapp)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cream/90 transition hover:text-cream"
+                    className="text-cream/100 transition hover:text-cream"
                   >
                     WhatsApp
                   </a>
@@ -104,7 +104,7 @@ export default async function Hero() {
 
             <SocialLinks
               socials={socials}
-              className="justify-center text-ink/70 lg:justify-start"
+              className="justify-center text-cream/85 lg:justify-start"
             />
           </div>
         </div>
