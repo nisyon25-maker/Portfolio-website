@@ -57,7 +57,7 @@ export default async function Hero() {
             <div className="absolute inset-x-0 bottom-0 h-64 rounded-[2.5rem] bg-royal-bright/10 blur-3xl" />
             <div className="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white shadow-[0_35px_90px_rgba(15,23,42,0.1)]">
               <Image
-                src="/new img.jpeg"
+                src="/portrait.png"
                 alt={tBrand("name")}
                 width={780}
                 height={980}
