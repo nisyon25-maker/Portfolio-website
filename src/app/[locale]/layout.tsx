@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -7,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import { getSiteSeo } from "@/lib/data";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import { PageTransition } from "@/components/layout/page-transition";
 import SetHtmlLang from "@/components/set-html-lang";
 
 const geistSans = Geist({
@@ -74,7 +76,11 @@ export default async function LocaleLayout({
       <NextIntlClientProvider>
         <SetHtmlLang locale={locale} />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <Suspense fallback={null}>
+            <PageTransition>{children}</PageTransition>
+          </Suspense>
+        </main>
         <Footer />
       </NextIntlClientProvider>
     </div>

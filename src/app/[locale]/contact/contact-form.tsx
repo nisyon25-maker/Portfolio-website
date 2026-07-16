@@ -36,7 +36,7 @@ export default function ContactForm() {
           type="text"
           required
           maxLength={200}
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-transparent px-4 py-2.5 text-sm"
+          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
         />
       </div>
 
@@ -50,7 +50,7 @@ export default function ContactForm() {
           type="email"
           required
           maxLength={320}
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-transparent px-4 py-2.5 text-sm"
+          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
         />
       </div>
 
@@ -62,7 +62,7 @@ export default function ContactForm() {
           id="serviceInterest"
           name="serviceInterest"
           defaultValue=""
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-transparent px-4 py-2.5 text-sm"
+          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900"
         >
           <option value="">{t("serviceInterestPlaceholder")}</option>
           {ALL_SERVICE_CATEGORIES.map((category) => (
@@ -83,7 +83,7 @@ export default function ContactForm() {
           required
           rows={5}
           maxLength={5000}
-          className="mt-2 w-full rounded-lg border border-royal/20 bg-transparent px-4 py-2.5 text-sm"
+          className="mt-2 w-full rounded-lg border border-royal/20 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
         />
       </div>
 
