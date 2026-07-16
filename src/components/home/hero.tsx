@@ -27,7 +27,7 @@ export default async function Hero() {
             </p>
 
             <div className="overflow-hidden">
-              <h1 className="font-display text-[clamp(5rem,10vw,10rem)] uppercase tracking-[0.18em] leading-[0.88] text-cream drop-shadow-[0_16px_50px_rgba(0,0,0,0.35)]">
+              <h1 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] uppercase tracking-[0.14em] leading-[0.95] text-cream drop-shadow-[0_10px_36px_rgba(0,0,0,0.3)]">
                 {tBrand("name")}
               </h1>
             </div>
@@ -51,16 +51,14 @@ export default async function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[30rem] animate-fade-up animate-fade-up-delay-200">
-            <div className="relative overflow-hidden rounded-[2rem] border border-cream/20 shadow-[0_35px_90px_rgba(0,0,0,0.18)]">
-              <Image
-                src="/portrait.png"
-                alt={tBrand("name")}
-                width={780}
-                height={980}
-                priority
-                className="h-[520px] w-full object-cover transition-transform duration-1000 ease-out hover:scale-[1.03]"
-              />
-            </div>
+            <Image
+              src="/portrait.png"
+              alt={tBrand("name")}
+              width={780}
+              height={980}
+              priority
+              className="h-[520px] w-full object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.28)] transition-transform duration-1000 ease-out hover:scale-[1.02]"
+            />
           </div>
 
           <div className="space-y-8 text-center lg:text-left animate-fade-up animate-fade-up-delay-300">
