@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
         aria-label={t("language")}
       >
         {routing.locales.map((l) => (
-          <option key={l} value={l} className="text-ink">
+          <option key={l} value={l} className="text-royal">
             {LOCALE_LABELS[l] ?? l}
           </option>
         ))}

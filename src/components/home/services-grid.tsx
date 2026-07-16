@@ -19,10 +19,10 @@ export default function ServicesGrid() {
   return (
     <Section className="bg-cream">
       <div className="mb-12 text-center">
-        <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+        <h2 className="font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">
           {t("servicesTitle")}
         </h2>
-        <p className="mt-3 text-ink/70">{t("servicesSubtitle")}</p>
+        <p className="mt-3 text-cream/80">{t("servicesSubtitle")}</p>
       </div>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {SERVICES.map(({ category, icon: Icon }) => {
@@ -33,8 +33,8 @@ export default function ServicesGrid() {
                 <div className="mb-4 inline-flex rounded-xl bg-royal-bright/10 p-3">
                   <Icon className="h-6 w-6 text-royal-bright" />
                 </div>
-                <h3 className="text-lg font-semibold text-ink">{tServices(camel)}</h3>
-                <p className="mt-2 text-sm text-ink/70">{tServices(`${camel}Desc`)}</p>
+                <h3 className="text-lg font-semibold text-royal">{tServices(camel)}</h3>
+                <p className="mt-2 text-sm text-cream/80">{tServices(`${camel}Desc`)}</p>
               </Card>
             </Link>
           );

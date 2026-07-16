@@ -54,14 +54,14 @@ export default async function BlogPage({
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     {post.tags[0] && <Badge className="mb-3 w-fit">{post.tags[0]}</Badge>}
-                    <h2 className="text-lg font-semibold">{localized.title}</h2>
+                    <h2 className="text-lg font-semibold text-royal">{localized.title}</h2>
                     {localized.excerpt && (
-                      <p className="mt-2 line-clamp-3 text-sm text-ink/70">
+                      <p className="mt-2 line-clamp-3 text-sm text-cream/80">
                         {localized.excerpt}
                       </p>
                     )}
                     {post.published_at && (
-                      <p className="mt-4 text-xs text-ink/50">
+                      <p className="mt-4 text-xs text-cream/60">
                         {formatDate(post.published_at, locale)}
                       </p>
                     )}

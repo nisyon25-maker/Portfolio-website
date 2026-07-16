@@ -62,7 +62,7 @@ export default async function AboutPage({
             {t("downloadResume")}
           </a>
         ) : (
-          <p className="mt-6 text-sm text-ink/50">{t("resumeUnavailable")}</p>
+          <p className="mt-6 text-sm text-cream/50">{t("resumeUnavailable")}</p>
         )}
       </div>
     </Section>

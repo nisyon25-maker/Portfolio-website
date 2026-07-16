@@ -121,14 +121,14 @@ export default async function ProjectDetailPage({
 
       {project.tech_stack.length > 0 && (
         <div className="mt-12">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/60">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-cream/60">
             {t("techUsed")}
           </h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {project.tech_stack.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full bg-royal-bright/10 px-3 py-1 text-sm text-ink/70"
+                className="rounded-full bg-royal-bright/10 px-3 py-1 text-sm text-cream/80"
               >
                 {tech}
               </span>

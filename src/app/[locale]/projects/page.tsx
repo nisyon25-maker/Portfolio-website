@@ -42,7 +42,7 @@ export default async function ProjectsPage({
       </div>
 
       {projects.length === 0 ? (
-        <p className="mt-12 text-ink/60">{t("empty")}</p>
+        <p className="mt-12 text-cream/60">{t("empty")}</p>
       ) : (
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (

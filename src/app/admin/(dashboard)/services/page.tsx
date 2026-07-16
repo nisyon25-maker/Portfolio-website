@@ -16,7 +16,7 @@ export default async function AdminServicesPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-ink">Services</h1>
+        <h1 className="text-2xl font-semibold text-royal">Services</h1>
         <Link
           href="/admin/services/new"
           className="rounded-full bg-royal-bright px-5 py-2 text-sm font-medium text-cream transition hover:bg-royal-bright/90"

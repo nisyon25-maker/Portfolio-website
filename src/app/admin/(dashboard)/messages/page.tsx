@@ -6,7 +6,7 @@ export const metadata = { title: "Messages" };
 
 const STATUS_STYLES: Record<ContactSubmission["status"], string> = {
   new: "text-royal-bright",
-  read: "text-ink/50",
+  read: "text-royal/50",
   responded: "text-green-600",
 };
 

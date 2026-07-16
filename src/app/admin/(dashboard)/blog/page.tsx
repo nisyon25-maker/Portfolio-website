@@ -16,7 +16,7 @@ export default async function AdminBlogPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-ink">Blog</h1>
+        <h1 className="text-2xl font-semibold text-royal">Blog</h1>
         <Link
           href="/admin/blog/new"
           className="rounded-full bg-royal-bright px-5 py-2 text-sm font-medium text-cream transition hover:bg-royal-bright/90"
@@ -25,9 +25,9 @@ export default async function AdminBlogPage() {
         </Link>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-ink/10 bg-white">
+      <div className="mt-6 overflow-hidden rounded-xl border border-cream/20 bg-cream">
         <table className="w-full text-left text-sm">
-          <thead className="bg-cream text-ink/60">
+          <thead className="bg-royal/5 text-royal/80">
             <tr>
               <th className="px-4 py-3">Title</th>
               <th className="px-4 py-3">Status</th>
@@ -36,12 +36,12 @@ export default async function AdminBlogPage() {
           </thead>
           <tbody>
             {posts.map((post) => (
-              <tr key={post.id} className="border-t border-ink/10">
-                <td className="px-4 py-3 font-medium text-ink">{post.title}</td>
+              <tr key={post.id} className="border-t border-cream/20">
+                <td className="px-4 py-3 font-medium text-royal">{post.title}</td>
                 <td className="px-4 py-3">
                   <span
                     className={
-                      post.status === "published" ? "text-royal-bright" : "text-ink/50"
+                      post.status === "published" ? "text-royal-bright" : "text-royal/50"
                     }
                   >
                     {post.status}
@@ -64,7 +64,7 @@ export default async function AdminBlogPage() {
             ))}
             {posts.length === 0 && (
               <tr>
-                <td className="px-4 py-6 text-ink/50" colSpan={3}>
+                <td className="px-4 py-6 text-royal/50" colSpan={3}>
                   No blog posts yet.
                 </td>
               </tr>
