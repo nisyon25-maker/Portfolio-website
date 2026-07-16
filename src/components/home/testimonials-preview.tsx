@@ -20,7 +20,7 @@ export default async function TestimonialsPreview() {
             <h2 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
               {t("testimonialsTitle")}
             </h2>
-            <p className="mt-3 text-cream/80">{t("testimonialsSubtitle")}</p>
+            <p className="mt-3 text-ink/70">{t("testimonialsSubtitle")}</p>
           </div>
           <LinkButton href="/testimonials" variant="secondary">
             {t("viewAllTestimonials")}
@@ -35,7 +35,7 @@ export default async function TestimonialsPreview() {
                 className="rounded-2xl border border-cream/20 bg-cream p-6 shadow-sm"
               >
                 <Quote className="h-6 w-6 text-royal/40" />
-                <p className="mt-4 text-cream/80">&ldquo;{localized.quote}&rdquo;</p>
+                <p className="mt-4 text-ink/70">&ldquo;{localized.quote}&rdquo;</p>
                 <div className="mt-6 flex items-center gap-3">
                   {testimonial.avatar_url && (
                     <div className="relative h-10 w-10 overflow-hidden rounded-full bg-royal-bright/10">
@@ -49,7 +49,7 @@ export default async function TestimonialsPreview() {
                   )}
                   <div>
                     <p className="text-sm font-semibold text-royal">{testimonial.name}</p>
-                    <p className="text-xs text-cream/60">
+                    <p className="text-xs text-ink/55">
                       {[testimonial.role, testimonial.company].filter(Boolean).join(" · ")}
                     </p>
                   </div>

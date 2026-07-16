@@ -16,7 +16,7 @@ export default function FeaturedProjects({ projects }: { projects: Project[] }) 
           <h2 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
             {t("featuredProjectsTitle")}
           </h2>
-          <p className="mt-3 text-cream/80">{t("featuredProjectsSubtitle")}</p>
+          <p className="mt-3 text-ink/70">{t("featuredProjectsSubtitle")}</p>
         </div>
         <LinkButton href="/projects" variant="secondary">
           {t("viewAllProjects")}

@@ -17,10 +17,7 @@ export default async function Hero() {
   ]);
 
   return (
-    <section className="relative overflow-hidden bg-royal text-cream">
-      <div className="pointer-events-none absolute -left-28 top-8 h-72 w-72 rounded-full bg-royal-bright/10 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-28 h-72 w-72 rounded-full bg-royal-bright/10 blur-3xl" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-royal-bright/5 blur-3xl" />
+    <section className="relative overflow-hidden text-cream">
 
       <Container className="relative py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_420px_minmax(0,0.7fr)] lg:items-center">
@@ -54,8 +51,7 @@ export default async function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[30rem] animate-fade-up animate-fade-up-delay-200">
-            <div className="absolute inset-x-0 bottom-0 h-64 rounded-[2.5rem] bg-royal-bright/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-cream/20 bg-cream/5 shadow-[0_35px_90px_rgba(0,0,0,0.18)]">
+            <div className="relative overflow-hidden rounded-[2rem] border border-cream/20 shadow-[0_35px_90px_rgba(0,0,0,0.18)]">
               <Image
                 src="/portrait.png"
                 alt={tBrand("name")}

@@ -56,12 +56,12 @@ export default async function BlogPage({
                     {post.tags[0] && <Badge className="mb-3 w-fit">{post.tags[0]}</Badge>}
                     <h2 className="text-lg font-semibold text-royal">{localized.title}</h2>
                     {localized.excerpt && (
-                      <p className="mt-2 line-clamp-3 text-sm text-cream/80">
+                      <p className="mt-2 line-clamp-3 text-sm text-ink/70">
                         {localized.excerpt}
                       </p>
                     )}
                     {post.published_at && (
-                      <p className="mt-4 text-xs text-cream/60">
+                      <p className="mt-4 text-xs text-ink/55">
                         {formatDate(post.published_at, locale)}
                       </p>
                     )}

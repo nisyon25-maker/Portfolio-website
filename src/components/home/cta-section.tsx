@@ -11,7 +11,7 @@ export default function CtaSection() {
         <h2 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
           {t("ctaTitle")}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-cream/80">{t("ctaSubtitle")}</p>
+        <p className="mx-auto mt-4 max-w-xl text-ink/70">{t("ctaSubtitle")}</p>
         <div className="mt-8">
           <LinkButton href="/contact">{t("ctaButton")}</LinkButton>
         </div>

@@ -52,7 +52,7 @@ export default async function ServicesPage({
                   </div>
                   <h2 className="text-xl font-semibold text-royal">{localized.title}</h2>
                   {localized.description && (
-                    <p className="mt-2 text-sm text-cream/80">{localized.description}</p>
+                    <p className="mt-2 text-sm text-ink/70">{localized.description}</p>
                   )}
                 </Card>
               );
@@ -74,7 +74,7 @@ export default async function ServicesPage({
                       <Icon className="h-6 w-6 text-royal-bright" />
                     </div>
                     <h2 className="text-xl font-semibold text-royal">{t(key)}</h2>
-                    <p className="mt-2 text-sm text-cream/80">{t(`${key}Desc`)}</p>
+                    <p className="mt-2 text-sm text-ink/70">{t(`${key}Desc`)}</p>
                   </Card>
                 </Link>
               );

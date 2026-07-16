@@ -16,7 +16,7 @@ export default function Values() {
           <h2 className="font-display text-4xl font-bold tracking-tight text-royal sm:text-5xl">
             {t("valuesTitle")}
           </h2>
-          <p className="mt-3 text-cream/80">{t("valuesSubtitle")}</p>
+          <p className="mt-3 text-ink/70">{t("valuesSubtitle")}</p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => {
@@ -30,7 +30,7 @@ export default function Values() {
                   <Icon className="h-6 w-6 text-royal-bright" />
                 </div>
                 <h3 className="font-semibold text-royal">{item.title}</h3>
-                <p className="mt-2 text-sm text-cream/80">{item.desc}</p>
+                <p className="mt-2 text-sm text-ink/70">{item.desc}</p>
               </div>
             );
           })}

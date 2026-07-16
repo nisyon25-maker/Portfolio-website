@@ -22,7 +22,7 @@ export default function TechStrip() {
         <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-royal-bright">
           {t("techTitle")}
         </h2>
-        <p className="mx-auto mt-2 max-w-xl text-sm text-cream/80">
+        <p className="mx-auto mt-2 max-w-xl text-sm text-ink/70">
           {t("techSubtitle")}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
