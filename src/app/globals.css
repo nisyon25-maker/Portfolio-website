@@ -27,8 +27,8 @@
   --cream-soft: #ece4d0;
   --ink: #0f172a;
 
-  --background: #f7f5ef;
-  --foreground: var(--ink);
+  --background: var(--royal);
+  --foreground: var(--cream);
 }
 
 html {
