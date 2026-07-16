@@ -13,7 +13,10 @@
       "Bash(git ls-remote *)",
       "Bash(echo \"--- exit: $? ---\")",
       "Bash(mkdir -p \"C:\\\\Users\\\\USER\\\\ortfolio website\\\\src\\\\app\\\\admin\\\\\\(dashboard\\)\\\\services\\\\new\" \"C:\\\\Users\\\\USER\\\\ortfolio website\\\\src\\\\app\\\\admin\\\\\\(dashboard\\)\\\\services\\\\[id]\")",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(command -v vercel)",
+      "Bash(vercel --version)",
+      "Bash(npx vercel *)"
     ]
   }
 }
