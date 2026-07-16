@@ -20,7 +20,7 @@ export default async function AdminMessagesPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-cream">Messages</h1>
+      <h1 className="text-2xl font-semibold text-royal">Messages</h1>
 
       <div className="mt-6 space-y-4">
         {submissions.map((submission) => (

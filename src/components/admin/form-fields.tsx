@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const fieldClass =
-  "mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40";
+  "mt-2 w-full rounded-lg border border-royal/25 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40 focus:border-royal-bright focus:outline-none";
 
 export function Field({
   label,

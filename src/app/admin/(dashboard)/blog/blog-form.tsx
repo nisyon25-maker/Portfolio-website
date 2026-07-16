@@ -32,7 +32,7 @@ export default function BlogForm({
 
       <div className="rounded-lg border border-cream/20 bg-cream p-4">
         <p className="text-sm font-semibold text-royal">SEO</p>
-        <p className="mt-1 text-xs text-cream/60">
+        <p className="mt-1 text-xs text-ink/60">
           Controls the browser tab title and search/social preview. Leave blank to
           use the post title and excerpt.
         </p>

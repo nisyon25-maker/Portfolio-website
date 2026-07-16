@@ -32,7 +32,7 @@ export default async function AdminOverviewPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-cream">Overview</h1>
+      <h1 className="text-2xl font-semibold text-royal">Overview</h1>
       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {stats.map((stat) => (
           <Link
