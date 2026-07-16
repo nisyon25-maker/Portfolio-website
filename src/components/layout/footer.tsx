@@ -60,13 +60,6 @@ export default async function Footer() {
               </a>
             </li>
           )}
-          {contact.email && (
-            <li className="flex items-center gap-2">
-              <a href={`mailto:${contact.email}`} className="hover:text-cream">
-                {contact.email}
-              </a>
-            </li>
-          )}
         </ul>
       </div>
 
