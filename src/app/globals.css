@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/*
+  Royal blue + cream editorial palette
+  ------------------------------------
+  royal-deep  #0e1a4d  — darkest, hero / footer backgrounds
+  royal       #1b2f7a  — primary royal blue surfaces
+  royal-bright#2f49c7  — accent / hover / links
+  cream       #f4efe1  — page background, text on royal
+  cream-soft  #ece4d0  — muted cream, borders on dark
+  ink         #0e1533  — text on cream
+*/
+
+:root {
+  --royal-deep: #0e1a4d;
+  --royal: #1b2f7a;
+  --royal-bright: #2f49c7;
+  --cream: #f4efe1;
+  --cream-soft: #ece4d0;
+  --ink: #0e1533;
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-royal-deep: var(--royal-deep);
+  --color-royal: var(--royal);
+  --color-royal-bright: var(--royal-bright);
+  --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Editorial display serif helper */
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}

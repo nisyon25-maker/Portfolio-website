@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:\\\\Users\\\\USER\\\\ortfolio website\" && cp \"C:/Users/USER/Downloads/WhatsApp Image 2026-07-16 at 5.05.53 PM.jpeg\" public/portrait.jpg && ls -la public/portrait.jpg)",
+      "Bash(cd \"C:\\\\Users\\\\USER\\\\ortfolio website\" && rm -rf \"src/app/[locale]/pricing\" \"src/app/admin/\\(dashboard\\)/pricing\" && echo \"deleted\" && ls \"src/app/[locale]\" && echo \"---admin---\" && ls \"src/app/admin/\\(dashboard\\)\")",
+      "Bash(node -e \"const l=require\\('lucide-react'\\); const k=Object.keys\\(l\\); console.log\\('total',k.length\\); console.log\\(k.filter\\(n=>/link|linked/i.test\\(n\\)\\)\\);\")",
+      "Bash(ls -lt \"C:/Users/USER/Downloads\" 2>/dev/null | grep -iE \"\\\\.\\(png|jpe?g|webp|svg\\)\" | head -6; echo \"--- clipboard/temp scan ---\"; find \"C:/Users/USER/AppData/Local/Temp\" -maxdepth 3 -type f \\\\\\( -iname \"*.png\" -o -iname \"*.svg\" \\\\\\) -newermt \"2026-07-16 19:00\" 2>/dev/null | head -10)",
+      "Bash(npm run *)"
+    ]
+  }
+}

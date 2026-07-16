@@ -1,0 +1,150 @@
+{
+  "brand": {
+    "name": "Nishan Yonjan",
+    "tagline": "IT Entrepreneur & Digital Marketing Expert",
+    "studio": "Nishan Yonjan"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "blog": "Blog",
+    "testimonials": "Testimonials",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "getInTouch": "Get in touch"
+  },
+  "services": {
+    "webDevelopment": "Web Development",
+    "mobileAppDevelopment": "Mobile App Development",
+    "aiBusinessAutomation": "AI Business Automation",
+    "digitalMarketing": "Digital Marketing",
+    "webDevelopmentDesc": "Fast, accessible, and scalable websites and web apps built with modern frameworks.",
+    "mobileAppDevelopmentDesc": "Cross-platform mobile apps that feel native and ship reliably.",
+    "aiBusinessAutomationDesc": "AI-powered workflows and automation that save teams real hours every week.",
+    "digitalMarketingDesc": "Data-driven marketing strategy, SEO, and campaigns that convert.",
+    "webDevelopmentCapabilities": ["Marketing sites & landing pages", "Web applications & dashboards", "E-commerce storefronts", "API design & integrations", "Performance & Core Web Vitals tuning"],
+    "mobileAppDevelopmentCapabilities": ["Cross-platform iOS & Android apps", "App Store & Play Store releases", "Push notifications & offline support", "Third-party SDK & payment integration", "App performance tuning"],
+    "aiBusinessAutomationCapabilities": ["Workflow & process automation", "AI chatbots & assistants", "Document & data extraction", "Custom internal tools", "LLM integration into existing systems"],
+    "digitalMarketingCapabilities": ["SEO strategy & technical audits", "Paid campaign management", "Content & social strategy", "Analytics & conversion tracking", "Email & lifecycle marketing"],
+    "webDevelopmentTools": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase / Postgres", "Vercel"],
+    "mobileAppDevelopmentTools": ["React Native", "Expo", "Swift", "Kotlin", "Firebase", "App Store Connect"],
+    "aiBusinessAutomationTools": ["OpenAI / Claude APIs", "LangChain", "Zapier / n8n", "Python", "Vector databases"],
+    "digitalMarketingTools": ["Google Analytics", "Google Ads", "Meta Ads", "SEMrush / Ahrefs", "Mailchimp / Klaviyo"],
+    "overviewTitle": "Services",
+    "overviewSubtitle": "Four disciplines, one accountable partner.",
+    "capabilities": "Capabilities",
+    "toolsAndTech": "Tools & Technology",
+    "relatedCaseStudies": "Related case studies",
+    "viewAllServices": "View all services"
+  },
+  "home": {
+    "heroEyebrow": "Welcome to my website",
+    "heroGreeting": "Hello, I Am",
+    "heroRole": "IT Entrepreneur",
+    "heroBio": "I'm Nishan — an IT entrepreneur and digital marketing expert. I build brands and businesses online, blending web, mobile, AI automation, and marketing into growth that actually shows up in the numbers.",
+    "heroCta": "Start a project",
+    "heroSecondaryCta": "View my work",
+    "servicesTitle": "What I do",
+    "servicesSubtitle": "Four core disciplines, delivered with the same rigor.",
+    "featuredProjectsTitle": "Featured work",
+    "featuredProjectsSubtitle": "A snapshot of recent case studies.",
+    "viewAllProjects": "View all projects",
+    "ctaTitle": "Have a project in mind?",
+    "ctaSubtitle": "Tell me about it and I'll get back to you within one business day.",
+    "ctaButton": "Contact me",
+    "techTitle": "Tools & technology I work with",
+    "techSubtitle": "A modern stack chosen for speed, scale, and measurable results.",
+    "valuesTitle": "Why work with me",
+    "valuesSubtitle": "A partner who cares about your growth as much as you do.",
+    "processTitle": "How we'll work together",
+    "processSubtitle": "A clear, proven process from first call to lasting growth.",
+    "testimonialsTitle": "What clients say",
+    "testimonialsSubtitle": "Real results, in their words.",
+    "viewAllTestimonials": "Read more"
+  },
+  "values": {
+    "items": [
+      { "title": "Global standards, local heart", "desc": "World-class execution with a deep understanding of the market you're selling to." },
+      { "title": "ROI-first thinking", "desc": "Every decision is measured against the growth and revenue it drives for you." },
+      { "title": "Ethical, practical AI", "desc": "Automation and AI applied where it genuinely saves time — never as a gimmick." },
+      { "title": "A long-term partner", "desc": "I stay involved after launch, iterating on what the numbers tell us." }
+    ]
+  },
+  "process": {
+    "steps": [
+      { "title": "Discovery", "desc": "We start with a free call to understand your goals, audience, and challenges." },
+      { "title": "Strategy", "desc": "I map out a clear plan across web, mobile, AI, and marketing tailored to your goals." },
+      { "title": "Build", "desc": "Fast, high-quality delivery with regular check-ins so you're never in the dark." },
+      { "title": "Grow", "desc": "We measure, optimise, and scale what works — turning results into momentum." }
+    ]
+  },
+  "contactDetails": {
+    "location": "Kathmandu, Nepal",
+    "phone": "+977-9705515425",
+    "whatsappLabel": "WhatsApp",
+    "whatsappUrl": "https://wa.me/9779705515425",
+    "linkedinLabel": "LinkedIn",
+    "linkedinUrl": "https://www.linkedin.com/in/nishanyonjan",
+    "locationLabel": "Based in",
+    "phoneLabel": "Call"
+  },
+  "about": {
+    "title": "About",
+    "skillsTitle": "Skills across four disciplines",
+    "resumeTitle": "Resume",
+    "resumeDesc": "Download a full copy of my resume for the details.",
+    "downloadResume": "Download Resume (PDF)",
+    "resumeUnavailable": "Resume not uploaded yet."
+  },
+  "projects": {
+    "title": "Projects & Case Studies",
+    "subtitle": "Real problems, real outcomes, across web, mobile, AI, and marketing.",
+    "filterAll": "All",
+    "empty": "No projects published in this category yet.",
+    "problem": "Problem",
+    "solution": "Solution",
+    "outcome": "Outcome",
+    "techUsed": "Tech used",
+    "backToProjects": "Back to all projects"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notes on building, shipping, and growing products.",
+    "empty": "No posts published yet — check back soon.",
+    "backToBlog": "Back to blog",
+    "readMore": "Read more"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What clients and collaborators say.",
+    "empty": "No testimonials published yet."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Engagement models to fit the scope of your project.",
+    "empty": "Pricing packages are being updated — please get in touch for a quote.",
+    "getStarted": "Get started"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Tell me about your project and I'll follow up shortly.",
+    "name": "Name",
+    "email": "Email",
+    "serviceInterest": "Service you're interested in",
+    "serviceInterestPlaceholder": "Select a service (optional)",
+    "message": "Message",
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "success": "Thanks — your message has been sent. I'll be in touch soon.",
+    "error": "Something went wrong sending your message. Please try again or email me directly."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js & Supabase"
+  },
+  "common": {
+    "language": "Language"
+  }
+}
