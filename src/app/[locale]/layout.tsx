@@ -71,7 +71,7 @@ export default async function LocaleLayout({
 
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} flex min-h-screen flex-col bg-cream font-sans text-ink`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} flex min-h-screen flex-col bg-royal font-sans text-cream`}
     >
       <NextIntlClientProvider>
         <SetHtmlLang locale={locale} />
