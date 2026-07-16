@@ -47,7 +47,7 @@ export default async function BlogPostPage({
     <Section>
       <Link
         href="/blog"
-        className="text-sm text-ink/60 hover:text-ink"
+        className="text-sm text-cream/70 hover:text-cream"
       >
         ← {t("backToBlog")}
       </Link>
@@ -57,11 +57,11 @@ export default async function BlogPostPage({
           <Badge key={tag}>{tag}</Badge>
         ))}
       </div>
-      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">
         {localized.title}
       </h1>
       {post.published_at && (
-        <p className="mt-3 text-sm text-ink/50">
+        <p className="mt-3 text-sm text-cream/80">
           {formatDate(post.published_at, locale)}
         </p>
       )}
@@ -77,7 +77,7 @@ export default async function BlogPostPage({
         </div>
       )}
 
-      <article className="prose prose-slate mt-10 max-w-none text-ink">
+      <article className="prose prose-invert mt-10 max-w-none text-cream">
         <ReactMarkdown>{localized.content}</ReactMarkdown>
       </article>
     </Section>

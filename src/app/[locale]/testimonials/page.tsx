@@ -27,21 +27,21 @@ export default async function TestimonialsPage({
 
   return (
     <Section>
-      <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t("title")}</h1>
-      <p className="mt-4 max-w-2xl text-lg text-ink/70">
+      <h1 className="font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">{t("title")}</h1>
+      <p className="mt-4 max-w-2xl text-lg text-cream/80">
         {t("subtitle")}
       </p>
 
       {testimonials.length === 0 ? (
-        <p className="mt-12 text-ink/60">{t("empty")}</p>
+        <p className="mt-12 text-cream/60">{t("empty")}</p>
       ) : (
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {testimonials.map((testimonial) => {
             const localized = localize(testimonial, locale, ["quote"]);
             return (
               <Card key={testimonial.id}>
-                <Quote className="h-6 w-6 text-ink/40" />
-                <p className="mt-4 text-ink/80">
+                <Quote className="h-6 w-6 text-royal/40" />
+                <p className="mt-4 text-royal/80">
                   &ldquo;{localized.quote}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-3">
@@ -56,8 +56,8 @@ export default async function TestimonialsPage({
                     </div>
                   )}
                   <div>
-                    <p className="text-sm font-semibold">{testimonial.name}</p>
-                    <p className="text-xs text-ink/60">
+                    <p className="text-sm font-semibold text-royal">{testimonial.name}</p>
+                    <p className="text-xs text-royal/60">
                       {[testimonial.role, testimonial.company]
                         .filter(Boolean)
                         .join(" · ")}

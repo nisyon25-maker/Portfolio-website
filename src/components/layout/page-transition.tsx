@@ -16,12 +16,17 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
   });
 
-  useEffect(() => {
-    setIsVisible(false);
-    const timeout = window.setTimeout(() => setIsVisible(true), 120);
+  const searchParamsString = searchParams.toString();
 
-    return () => window.clearTimeout(timeout);
-  }, [pathname, searchParams.toString()]);
+  useEffect(() => {
+    const hideTimeout = window.setTimeout(() => setIsVisible(false), 0);
+    const showTimeout = window.setTimeout(() => setIsVisible(true), 120);
+
+    return () => {
+      window.clearTimeout(hideTimeout);
+      window.clearTimeout(showTimeout);
+    };
+  }, [pathname, searchParamsString]);
 
   useEffect(() => {
     const handlePageShow = () => {
@@ -56,7 +61,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-full" style={{ willChange: "opacity, transform" }}>
       <div
-        className={`pointer-events-none fixed inset-0 z-40 flex items-center justify-center bg-cream/95 transition-opacity duration-400 ${
+        className={`pointer-events-none fixed inset-0 z-40 flex items-center justify-center bg-royal/95 transition-opacity duration-400 ${
           isVisible ? "opacity-0" : "opacity-100"
         }`}
       >

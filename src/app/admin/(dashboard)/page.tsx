@@ -32,16 +32,16 @@ export default async function AdminOverviewPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-ink">Overview</h1>
+      <h1 className="text-2xl font-semibold text-cream">Overview</h1>
       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {stats.map((stat) => (
           <Link
             key={stat.label}
             href={stat.href}
-            className="rounded-2xl border border-ink/10 bg-white p-5 transition hover:border-royal-bright/20"
+            className="rounded-2xl border border-cream/20 bg-cream p-5 transition hover:border-royal-bright/20"
           >
-            <p className="text-3xl font-bold text-ink">{stat.value}</p>
-            <p className="mt-1 text-sm text-ink/60">{stat.label}</p>
+            <p className="text-3xl font-bold text-royal">{stat.value}</p>
+            <p className="mt-1 text-sm text-royal/60">{stat.label}</p>
           </Link>
         ))}
       </div>

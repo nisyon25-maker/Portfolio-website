@@ -25,9 +25,9 @@ export default async function AdminTestimonialsPage() {
         </Link>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-ink/10 bg-white">
+      <div className="mt-6 overflow-hidden rounded-xl border border-cream/20 bg-cream">
         <table className="w-full text-left text-sm">
-          <thead className="bg-cream text-ink/60">
+          <thead className="bg-royal/5 text-royal/80">
             <tr>
               <th className="px-4 py-3">Name</th>
               <th className="px-4 py-3">Status</th>
@@ -36,12 +36,12 @@ export default async function AdminTestimonialsPage() {
           </thead>
           <tbody>
             {testimonials.map((testimonial) => (
-              <tr key={testimonial.id} className="border-t border-ink/10">
-                <td className="px-4 py-3 font-medium text-ink">{testimonial.name}</td>
+              <tr key={testimonial.id} className="border-t border-cream/20">
+                <td className="px-4 py-3 font-medium text-royal">{testimonial.name}</td>
                 <td className="px-4 py-3">
                   <span
                     className={
-                      testimonial.status === "published" ? "text-royal-bright" : "text-ink/50"
+                      testimonial.status === "published" ? "text-royal-bright" : "text-royal/50"
                     }
                   >
                     {testimonial.status}
@@ -55,7 +55,7 @@ export default async function AdminTestimonialsPage() {
                     Edit
                   </Link>
                   <form action={deleteTestimonial.bind(null, testimonial.id)} className="ml-4 inline">
-                    <button type="submit" className="text-red-600 hover:underline">
+                    <button type="submit" className="text-rose-600 hover:underline">
                       Delete
                     </button>
                   </form>
@@ -64,7 +64,7 @@ export default async function AdminTestimonialsPage() {
             ))}
             {testimonials.length === 0 && (
               <tr>
-                <td className="px-4 py-6 text-ink/50" colSpan={3}>
+                <td className="px-4 py-6 text-royal/50" colSpan={3}>
                   No testimonials yet.
                 </td>
               </tr>

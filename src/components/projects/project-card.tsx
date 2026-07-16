@@ -32,9 +32,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           <Badge className="mb-3 w-fit bg-royal-bright/10 text-royal-bright">
             {tServices(categoryKey)}
           </Badge>
-          <h3 className="text-lg font-semibold text-ink">{localized.title}</h3>
+          <h3 className="text-lg font-semibold text-royal">{localized.title}</h3>
           {localized.summary && (
-            <p className="mt-2 line-clamp-3 text-sm text-ink/70">
+            <p className="mt-2 line-clamp-3 text-sm text-royal/70">
               {localized.summary}
             </p>
           )}

@@ -27,19 +27,19 @@ export default async function AboutPage({
 
   return (
     <Section>
-      <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t("title")}</h1>
-      <p className="mt-6 max-w-3xl text-lg text-ink/70">
+      <h1 className="font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">{t("title")}</h1>
+      <p className="mt-6 max-w-3xl text-lg text-cream/80">
         {tServices("overviewSubtitle")}
       </p>
 
-      <h2 className="mt-16 text-2xl font-semibold">{t("skillsTitle")}</h2>
+      <h2 className="mt-16 text-2xl font-semibold text-cream">{t("skillsTitle")}</h2>
       <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {ALL_SERVICE_CATEGORIES.map((category) => {
           const key = categoryToCamel(category);
           return (
             <Card key={category}>
-              <h3 className="font-semibold">{tServices(key)}</h3>
-              <p className="mt-2 text-sm text-ink/70">
+              <h3 className="font-semibold text-royal">{tServices(key)}</h3>
+              <p className="mt-2 text-sm text-royal/70">
                 {tServices(`${key}Desc`)}
               </p>
             </Card>
@@ -47,9 +47,9 @@ export default async function AboutPage({
         })}
       </div>
 
-      <div className="mt-16 rounded-2xl border border-ink/10 bg-white p-8 text-center shadow-sm">
-        <h2 className="text-xl font-semibold text-ink">{t("resumeTitle")}</h2>
-        <p className="mt-2 text-ink/70">
+      <div className="mt-16 rounded-2xl border border-cream/20 bg-cream p-8 text-center shadow-sm">
+        <h2 className="text-xl font-semibold text-royal">{t("resumeTitle")}</h2>
+        <p className="mt-2 text-royal/70">
           {t("resumeDesc")}
         </p>
         {resume?.url ? (

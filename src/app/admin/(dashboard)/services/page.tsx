@@ -25,9 +25,9 @@ export default async function AdminServicesPage() {
         </Link>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-ink/10 bg-white">
+      <div className="mt-6 overflow-hidden rounded-xl border border-cream/20 bg-cream">
         <table className="w-full text-left text-sm">
-          <thead className="bg-cream text-ink/60">
+          <thead className="bg-royal/5 text-royal/80">
             <tr>
               <th className="px-4 py-3">Title</th>
               <th className="px-4 py-3">Status</th>
@@ -36,10 +36,10 @@ export default async function AdminServicesPage() {
           </thead>
           <tbody>
             {services.map((service) => (
-              <tr key={service.id} className="border-t border-ink/10">
-                <td className="px-4 py-3 font-medium text-ink">{service.title}</td>
+              <tr key={service.id} className="border-t border-cream/20">
+                <td className="px-4 py-3 font-medium text-royal">{service.title}</td>
                 <td className="px-4 py-3">
-                  <span className={service.status === "published" ? "text-royal-bright" : "text-ink/50"}>
+                  <span className={service.status === "published" ? "text-royal-bright" : "text-royal/50"}>
                     {service.status}
                   </span>
                 </td>
@@ -48,7 +48,7 @@ export default async function AdminServicesPage() {
                     Edit
                   </Link>
                   <form action={deleteService.bind(null, service.id)} className="ml-4 inline">
-                    <button type="submit" className="text-red-600 hover:underline">
+                    <button type="submit" className="text-rose-600 hover:underline">
                       Delete
                     </button>
                   </form>
@@ -57,7 +57,7 @@ export default async function AdminServicesPage() {
             ))}
             {services.length === 0 && (
               <tr>
-                <td className="px-4 py-6 text-ink/50" colSpan={3}>
+                <td className="px-4 py-6 text-royal/50" colSpan={3}>
                   No services yet. The public Services page falls back to the four default
                   disciplines until you add some here.
                 </td>

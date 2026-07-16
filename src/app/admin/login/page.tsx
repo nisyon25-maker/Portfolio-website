@@ -10,10 +10,10 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-6">
-      <div className="w-full max-w-sm rounded-2xl border border-ink/10 bg-white p-8">
-        <h1 className="text-xl font-semibold text-ink">Admin sign in</h1>
-        <p className="mt-1 text-sm text-ink/60">
+    <div className="flex min-h-screen items-center justify-center bg-royal px-6 py-16">
+      <div className="w-full max-w-sm rounded-2xl border border-cream/15 bg-cream p-8 shadow-xl shadow-royal/10">
+        <h1 className="text-xl font-semibold text-royal">Admin sign in</h1>
+        <p className="mt-1 text-sm text-royal/70">
           Sign in to manage your portfolio content.
         </p>
         <div className="mt-6">

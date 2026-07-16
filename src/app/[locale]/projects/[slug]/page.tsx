@@ -46,19 +46,19 @@ export default async function ProjectDetailPage({
     <Section>
       <Link
         href="/projects"
-        className="text-sm text-ink/60 hover:text-ink"
+        className="text-sm text-cream/70 hover:text-cream"
       >
         ← {t("backToProjects")}
       </Link>
 
-      <Badge className="mt-6 w-fit">
+      <Badge className="mt-6 w-fit bg-cream/10 text-cream">
         {tServices(categoryToCamel(project.category))}
       </Badge>
-      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">
         {localized.title}
       </h1>
       {localized.summary && (
-        <p className="mt-4 max-w-2xl text-lg text-ink/70">
+        <p className="mt-4 max-w-2xl text-lg text-cream/80">
           {localized.summary}
         </p>
       )}
@@ -89,30 +89,30 @@ export default async function ProjectDetailPage({
       <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3">
         {localized.problem && (
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/60">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-cream/70">
               {t("problem")}
             </h2>
-            <p className="mt-2 text-ink/80">
+            <p className="mt-2 text-cream/80">
               {localized.problem}
             </p>
           </div>
         )}
         {localized.solution && (
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/60">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-cream/70">
               {t("solution")}
             </h2>
-            <p className="mt-2 text-ink/80">
+            <p className="mt-2 text-cream/80">
               {localized.solution}
             </p>
           </div>
         )}
         {localized.outcome && (
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/60">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-cream/70">
               {t("outcome")}
             </h2>
-            <p className="mt-2 text-ink/80">
+            <p className="mt-2 text-cream/80">
               {localized.outcome}
             </p>
           </div>

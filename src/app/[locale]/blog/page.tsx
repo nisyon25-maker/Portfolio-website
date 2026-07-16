@@ -28,13 +28,13 @@ export default async function BlogPage({
 
   return (
     <Section>
-      <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t("title")}</h1>
-      <p className="mt-4 max-w-2xl text-lg text-ink/70">
+      <h1 className="font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">{t("title")}</h1>
+      <p className="mt-4 max-w-2xl text-lg text-cream/80">
         {t("subtitle")}
       </p>
 
       {posts.length === 0 ? (
-        <p className="mt-12 text-ink/60">{t("empty")}</p>
+        <p className="mt-12 text-cream/60">{t("empty")}</p>
       ) : (
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => {

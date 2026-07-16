@@ -21,7 +21,7 @@ export default function CategoryFilter({
       "rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
       isActive
         ? "bg-royal-bright text-cream"
-        : "bg-ink/10 text-ink/80 hover:bg-ink/20"
+        : "bg-cream/10 text-cream/85 hover:bg-cream/20"
     );
 
   return (

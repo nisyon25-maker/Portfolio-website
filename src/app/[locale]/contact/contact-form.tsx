@@ -18,7 +18,7 @@ export default function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <p className="rounded-xl border border-green-200 bg-green-50 p-6 text-green-800">
+      <p className="rounded-xl border border-cream/30 bg-cream p-6 text-royal">
         {t("success")}
       </p>
     );
@@ -27,7 +27,7 @@ export default function ContactForm() {
   return (
     <form action={formAction} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-ink/85">
+        <label htmlFor="name" className="block text-sm font-medium text-cream">
           {t("name")}
         </label>
         <input
@@ -36,12 +36,12 @@ export default function ContactForm() {
           type="text"
           required
           maxLength={200}
-          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
+          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-ink/85">
+        <label htmlFor="email" className="block text-sm font-medium text-cream">
           {t("email")}
         </label>
         <input
@@ -50,19 +50,19 @@ export default function ContactForm() {
           type="email"
           required
           maxLength={320}
-          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
+          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
         />
       </div>
 
       <div>
-        <label htmlFor="serviceInterest" className="block text-sm font-medium text-ink/85">
+        <label htmlFor="serviceInterest" className="block text-sm font-medium text-cream">
           {t("serviceInterest")}
         </label>
         <select
           id="serviceInterest"
           name="serviceInterest"
           defaultValue=""
-          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink"
+          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal"
         >
           <option value="">{t("serviceInterestPlaceholder")}</option>
           {ALL_SERVICE_CATEGORIES.map((category) => (
@@ -74,7 +74,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-ink/85">
+        <label htmlFor="message" className="block text-sm font-medium text-cream">
           {t("message")}
         </label>
         <textarea
@@ -83,7 +83,7 @@ export default function ContactForm() {
           required
           rows={5}
           maxLength={5000}
-          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
+          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
         />
       </div>
 

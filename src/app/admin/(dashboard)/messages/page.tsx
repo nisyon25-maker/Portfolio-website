@@ -20,22 +20,22 @@ export default async function AdminMessagesPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold">Messages</h1>
+      <h1 className="text-2xl font-semibold text-cream">Messages</h1>
 
       <div className="mt-6 space-y-4">
         {submissions.map((submission) => (
           <div
             key={submission.id}
-            className="rounded-xl border border-ink/10 bg-white p-5"
+            className="rounded-xl border border-cream/20 bg-cream p-5"
           >
             <div className="flex flex-wrap items-start justify-between gap-2">
               <div>
-                <p className="font-medium">{submission.name}</p>
+                <p className="font-medium text-royal">{submission.name}</p>
                 <a href={`mailto:${submission.email}`} className="text-sm text-royal-bright hover:underline">
                   {submission.email}
                 </a>
                 {submission.service_interest && (
-                  <p className="mt-1 text-xs text-ink/50">
+                  <p className="mt-1 text-xs text-royal/50">
                     Interested in: {submission.service_interest}
                   </p>
                 )}
@@ -44,23 +44,23 @@ export default async function AdminMessagesPage() {
                 {submission.status}
               </span>
             </div>
-            <p className="mt-4 whitespace-pre-wrap text-sm text-ink/70">
+            <p className="mt-4 whitespace-pre-wrap text-sm text-royal/70">
               {submission.message}
             </p>
             <div className="mt-4 flex items-center gap-4 text-xs">
-              <span className="text-ink/50">
+              <span className="text-royal/50">
                 {new Date(submission.created_at).toLocaleString()}
               </span>
               {submission.status !== "read" && (
-                <form action={markSubmissionStatus.bind(null, submission.id, "read")}>
+                <form action={markSubmissionStatus.bind(null, submission.id, "read")}> 
                   <button type="submit" className="text-royal-bright hover:underline">
                     Mark as read
                   </button>
                 </form>
               )}
               {submission.status !== "responded" && (
-                <form action={markSubmissionStatus.bind(null, submission.id, "responded")}>
-                  <button type="submit" className="text-green-600 hover:underline">
+                <form action={markSubmissionStatus.bind(null, submission.id, "responded")}> 
+                  <button type="submit" className="text-royal-bright hover:underline">
                     Mark as responded
                   </button>
                 </form>
@@ -69,7 +69,7 @@ export default async function AdminMessagesPage() {
           </div>
         ))}
         {submissions.length === 0 && (
-          <p className="text-ink/50">No messages yet.</p>
+          <p className="text-royal/50">No messages yet.</p>
         )}
       </div>
     </div>

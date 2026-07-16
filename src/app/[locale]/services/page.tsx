@@ -34,10 +34,10 @@ export default async function ServicesPage({
   return (
     <Section>
       <div className="text-center">
-        <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">
           {t("overviewTitle")}
         </h1>
-        <p className="mt-4 text-lg text-ink/70">{t("overviewSubtitle")}</p>
+        <p className="mt-4 text-lg text-cream/80">{t("overviewSubtitle")}</p>
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">

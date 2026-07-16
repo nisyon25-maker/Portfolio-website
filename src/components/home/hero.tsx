@@ -55,7 +55,7 @@ export default async function Hero() {
 
           <div className="relative mx-auto w-full max-w-[30rem] animate-fade-up animate-fade-up-delay-200">
             <div className="absolute inset-x-0 bottom-0 h-64 rounded-[2.5rem] bg-royal-bright/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white shadow-[0_35px_90px_rgba(15,23,42,0.1)]">
+            <div className="relative overflow-hidden rounded-[2rem] border border-cream/20 bg-cream/5 shadow-[0_35px_90px_rgba(0,0,0,0.18)]">
               <Image
                 src="/portrait.png"
                 alt={tBrand("name")}

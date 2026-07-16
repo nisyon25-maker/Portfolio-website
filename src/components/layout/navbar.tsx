@@ -22,11 +22,11 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-white/95 text-ink backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-cream/15 bg-royal/95 text-cream backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 text-ink" aria-label={tBrand("name")}>
-          <BrandLogo className="h-9 w-9 text-royal-bright" />
-          <span className="font-display text-xs uppercase tracking-[0.45em] text-ink/80">
+        <Link href="/" className="flex items-center gap-3 text-cream" aria-label={tBrand("name") }>
+          <BrandLogo className="h-9 w-9 text-cream" />
+          <span className="font-display text-xs uppercase tracking-[0.45em] text-cream/80">
             {tBrand("name")}
           </span>
         </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium uppercase tracking-[0.22em] text-ink/75 transition hover:text-ink"
+              className="text-sm font-medium uppercase tracking-[0.22em] text-cream/80 transition hover:text-cream"
             >
               {link.label}
             </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
           <LanguageSwitcher />
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full border border-royal-bright bg-white px-5 py-2 text-sm font-semibold text-royal-bright transition hover:bg-royal-bright/10"
+            className="inline-flex items-center justify-center rounded-full border border-cream/30 bg-cream px-5 py-2 text-sm font-semibold text-royal transition hover:bg-cream/90"
           >
             {t("getInTouch")}
           </Link>
@@ -63,14 +63,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-ink/10 bg-white px-6 py-4 lg:hidden">
+        <div className="border-t border-cream/15 bg-royal px-6 py-4 lg:hidden">
           <nav className="flex flex-col gap-4">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium uppercase tracking-[0.22em] text-ink/75"
+                className="text-sm font-medium uppercase tracking-[0.22em] text-cream/80"
               >
                 {link.label}
               </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-full border border-royal-bright bg-white px-5 py-2 text-sm font-semibold text-royal-bright"
+              className="inline-flex items-center justify-center rounded-full border border-cream/20 bg-cream px-5 py-2 text-sm font-semibold text-royal"
             >
               {t("getInTouch")}
             </Link>

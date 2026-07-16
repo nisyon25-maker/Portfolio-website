@@ -11,7 +11,7 @@ export default function LoginForm() {
   return (
     <form action={formAction} className="space-y-5">
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-ink">
+        <label htmlFor="email" className="block text-sm font-medium text-royal">
           Email
         </label>
         <input
@@ -20,11 +20,11 @@ export default function LoginForm() {
           type="email"
           required
           autoComplete="email"
-          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
+          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
         />
       </div>
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-ink">
+        <label htmlFor="password" className="block text-sm font-medium text-royal">
           Password
         </label>
         <input
@@ -33,7 +33,7 @@ export default function LoginForm() {
           type="password"
           required
           autoComplete="current-password"
-          className="mt-2 w-full rounded-lg border border-ink/20 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40"
+          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
         />
       </div>
       {state.error && (

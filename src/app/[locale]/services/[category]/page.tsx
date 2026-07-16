@@ -53,8 +53,8 @@ export default async function ServiceDetailPage({
   return (
     <Section>
       <Icon className="h-10 w-10 text-royal-bright" />
-      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">{t(key)}</h1>
-      <p className="mt-4 max-w-2xl text-lg text-ink/70">
+      <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">{t(key)}</h1>
+      <p className="mt-4 max-w-2xl text-lg text-cream/80">
         {t(`${key}Desc`)}
       </p>
 
@@ -65,9 +65,9 @@ export default async function ServiceDetailPage({
             {capabilities.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-2 text-ink/70"
+                className="flex items-start gap-2 text-cream/80"
               >
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/70" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cream/70" />
                 {item}
               </li>
             ))}
@@ -79,7 +79,7 @@ export default async function ServiceDetailPage({
             {tools.map((tool) => (
               <span
                 key={tool}
-                className="rounded-full bg-royal-bright/10 px-3 py-1 text-sm text-ink/70"
+                className="rounded-full bg-cream/10 px-3 py-1 text-sm text-cream"
               >
                 {tool}
               </span>
