@@ -1,5 +1,5 @@
 import { Field, Input, Textarea, Select } from "@/components/admin/form-fields";
-import { ALL_SERVICE_CATEGORIES, categoryToCamel } from "@/lib/services-content";
+import { categoryToCamel } from "@/lib/services-content";
 import type { Project } from "@/lib/types";
 
 export default function ProjectForm({
