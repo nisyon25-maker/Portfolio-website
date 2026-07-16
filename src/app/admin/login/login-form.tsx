@@ -20,7 +20,7 @@ export default function LoginForm() {
           type="email"
           required
           autoComplete="email"
-          className="mt-2 w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2.5 text-sm dark:border-slate-700"
+          className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
         />
       </div>
       <div>
@@ -33,7 +33,7 @@ export default function LoginForm() {
           type="password"
           required
           autoComplete="current-password"
-          className="mt-2 w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2.5 text-sm dark:border-slate-700"
+          className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
         />
       </div>
       {state.error && (

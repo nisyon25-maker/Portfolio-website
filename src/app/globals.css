@@ -2,6 +2,13 @@
 @plugin "@tailwindcss/typography";
 
 /*
+  This site uses a single light (royal + cream) theme. Bind the `dark:` variant
+  to an explicit `.dark` class (never applied) so admin `dark:*` utilities don't
+  activate from the OS colour scheme and turn text invisible on dark backgrounds.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
   Royal blue + cream editorial palette
   ------------------------------------
   royal-deep  #0e1a4d  — darkest, hero / footer backgrounds
