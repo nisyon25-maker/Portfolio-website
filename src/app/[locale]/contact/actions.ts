@@ -75,7 +75,11 @@ export async function submitContactForm(
     // Surface the real Postgres error in server logs (e.g. Vercel function logs)
     // — the most common cause is a missing `phone` column on the live database.
     console.error("[contact] insert failed:", error.message, error.details, error.hint);
-    return { status: "error", errors: { form: "Unable to save your message right now." } };
+    // TEMP DEBUG: expose the DB reason to diagnose the live save failure. Revert after.
+    return {
+      status: "error",
+      errors: { form: `DB error: ${error.message}${error.hint ? ` (hint: ${error.hint})` : ""}` },
+    };
   }
 
   // Best-effort owner notification; never blocks the submission.
