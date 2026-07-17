@@ -91,6 +91,7 @@ export interface ContactSubmission {
   id: string;
   name: string;
   email: string;
+  phone: string | null;
   message: string;
   service_interest: ServiceCategory | null;
   status: "new" | "read" | "responded";

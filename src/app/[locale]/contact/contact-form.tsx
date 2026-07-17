@@ -24,6 +24,8 @@ export default function ContactForm() {
     );
   }
 
+  const inputClasses = "mt-2 w-full rounded-lg border bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40";
+
   return (
     <form action={formAction} className="space-y-6">
       <div>
@@ -36,22 +38,45 @@ export default function ContactForm() {
           type="text"
           required
           maxLength={200}
-          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
+          autoComplete="name"
+          className={`${inputClasses} ${state.errors?.name ? "border-red-400" : "border-cream/30"}`}
         />
+        {state.errors?.name && <p className="mt-2 text-sm text-red-400">{state.errors.name}</p>}
       </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-cream">
-          {t("email")}
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          maxLength={320}
-          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
-        />
+      <div className="grid gap-6 md:grid-cols-2">
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-cream">
+            {t("email")}
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            maxLength={320}
+            autoComplete="email"
+            className={`${inputClasses} ${state.errors?.email ? "border-red-400" : "border-cream/30"}`}
+          />
+          {state.errors?.email && <p className="mt-2 text-sm text-red-400">{state.errors.email}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-cream">
+            {t("phone")}
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            maxLength={20}
+            autoComplete="tel"
+            inputMode="tel"
+            className={`${inputClasses} ${state.errors?.phone ? "border-red-400" : "border-cream/30"}`}
+          />
+          {state.errors?.phone && <p className="mt-2 text-sm text-red-400">{state.errors.phone}</p>}
+        </div>
       </div>
 
       <div>
@@ -62,7 +87,7 @@ export default function ContactForm() {
           id="serviceInterest"
           name="serviceInterest"
           defaultValue=""
-          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal"
+          className={`${inputClasses} ${state.errors?.serviceInterest ? "border-red-400" : "border-cream/30"}`}
         >
           <option value="">{t("serviceInterestPlaceholder")}</option>
           {ALL_SERVICE_CATEGORIES.map((category) => (
@@ -83,12 +108,13 @@ export default function ContactForm() {
           required
           rows={5}
           maxLength={5000}
-          className="mt-2 w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5 text-sm text-royal placeholder:text-royal/40"
+          className={`${inputClasses} ${state.errors?.message ? "border-red-400" : "border-cream/30"}`}
         />
+        {state.errors?.message && <p className="mt-2 text-sm text-red-400">{state.errors.message}</p>}
       </div>
 
       {state.status === "error" && (
-        <p className="text-sm text-red-600">{t("error")}</p>
+        <p className="text-sm text-red-400">{state.errors?.form ?? t("error")}</p>
       )}
 
       <Button type="submit" disabled={pending} className="w-full sm:w-auto">

@@ -6,9 +6,15 @@ import { isSupabaseConfigured } from "@/lib/env";
 import type { ServiceCategory } from "@/lib/types";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1).max(200),
-  email: z.string().trim().email().max(320),
-  message: z.string().trim().min(1).max(5000),
+  name: z.string().trim().min(1, "Please enter your name.").max(200, "Name is too long."),
+  email: z.string().trim().email("Please enter a valid email address.").max(320, "Email is too long."),
+  phone: z
+    .string()
+    .trim()
+    .min(7, "Please enter a valid phone number.")
+    .max(20, "Please enter a valid phone number.")
+    .regex(/^[+()0-9\s-]{7,20}$/, "Please enter a valid phone number."),
+  message: z.string().trim().min(1, "Please enter your message.").max(5000, "Message is too long."),
   serviceInterest: z
     .enum([
       "web_development",
@@ -22,6 +28,7 @@ const contactSchema = z.object({
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
+  errors?: Partial<Record<"name" | "email" | "phone" | "message" | "serviceInterest" | "form", string>>;
 };
 
 export async function submitContactForm(
@@ -31,28 +38,40 @@ export async function submitContactForm(
   const parsed = contactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
+    phone: formData.get("phone"),
     message: formData.get("message"),
     serviceInterest: formData.get("serviceInterest"),
   });
 
   if (!parsed.success) {
-    return { status: "error" };
+    const fieldErrors = parsed.error.flatten().fieldErrors;
+    return {
+      status: "error",
+      errors: {
+        name: fieldErrors.name?.[0],
+        email: fieldErrors.email?.[0],
+        phone: fieldErrors.phone?.[0],
+        message: fieldErrors.message?.[0],
+        serviceInterest: fieldErrors.serviceInterest?.[0],
+      },
+    };
   }
 
   if (!isSupabaseConfigured) {
-    return { status: "error" };
+    return { status: "error", errors: { form: "Supabase is not configured." } };
   }
 
   const supabase = await createClient();
   const { error } = await supabase.from("contact_submissions").insert({
     name: parsed.data.name,
     email: parsed.data.email,
+    phone: parsed.data.phone,
     message: parsed.data.message,
     service_interest: (parsed.data.serviceInterest || null) as ServiceCategory | null,
   });
 
   if (error) {
-    return { status: "error" };
+    return { status: "error", errors: { form: "Unable to save your message right now." } };
   }
 
   return { status: "success" };

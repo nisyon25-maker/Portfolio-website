@@ -34,6 +34,11 @@ export default async function AdminMessagesPage() {
                 <a href={`mailto:${submission.email}`} className="text-sm text-royal-bright hover:underline">
                   {submission.email}
                 </a>
+                {submission.phone && (
+                  <a href={`tel:${submission.phone}`} className="mt-1 block text-sm text-royal-bright hover:underline">
+                    {submission.phone}
+                  </a>
+                )}
                 {submission.service_interest && (
                   <p className="mt-1 text-xs text-royal/50">
                     Interested in: {submission.service_interest}

@@ -132,6 +132,8 @@
     "title": "Contact",
     "subtitle": "Tell me about your project and I'll follow up shortly.",
     "name": "Name",
+    "email": "Email",
+    "phone": "Phone number",
     "serviceInterest": "Service you're interested in",
     "serviceInterestPlaceholder": "Select a service (optional)",
     "message": "Message",

@@ -117,6 +117,7 @@ create table if not exists contact_submissions (
   id uuid primary key default gen_random_uuid(),
   name text not null,
   email text not null,
+  phone text,
   message text not null,
   service_interest service_category,
   status text not null default 'new' check (status in ('new', 'read', 'responded')),
