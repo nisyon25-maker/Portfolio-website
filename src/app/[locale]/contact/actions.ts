@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
+import { sendContactNotification } from "@/lib/email";
 import type { ServiceCategory } from "@/lib/types";
 
 const contactSchema = z.object({
@@ -73,6 +74,15 @@ export async function submitContactForm(
   if (error) {
     return { status: "error", errors: { form: "Unable to save your message right now." } };
   }
+
+  // Best-effort owner notification; never blocks the submission.
+  await sendContactNotification({
+    name: parsed.data.name,
+    email: parsed.data.email,
+    phone: parsed.data.phone,
+    message: parsed.data.message,
+    serviceInterest: parsed.data.serviceInterest || null,
+  });
 
   return { status: "success" };
 }

@@ -16,7 +16,8 @@
       "Bash(git add *)",
       "Bash(command -v vercel)",
       "Bash(vercel --version)",
-      "Bash(npx vercel *)"
+      "Bash(npx vercel *)",
+      "Bash(grep -E \"\\\\.env$|\\\\.env\\\\.local|node_modules\")"
     ]
   }
 }

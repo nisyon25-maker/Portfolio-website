@@ -47,6 +47,16 @@ Everything below is done from `/admin` after signing in — no code changes or r
 - **Replace your resume/CV:** Admin → Settings → upload a new PDF; it immediately replaces the download link on the About page.
 - **Reordering:** Projects and testimonials have a "Sort order" field — lower numbers appear first.
 
+### Email notifications for new inquiries (optional)
+
+Contact submissions always save to the database and show under Admin → Messages. To also get an **email each time someone submits the form**, set these environment variables (via [Resend](https://resend.com), free tier available):
+
+- `RESEND_API_KEY` — your Resend API key (leave blank to disable notifications)
+- `CONTACT_FROM_EMAIL` — the from address (must be a Resend-verified domain in production; `onboarding@resend.dev` works for testing)
+- `CONTACT_NOTIFY_EMAIL` — where notifications are sent (defaults to your site contact email)
+
+It's best-effort: if sending fails or no key is set, the submission is still saved — the visitor never sees an error.
+
 Contact details and social links are stored in Supabase (the `site_settings` table) and read live by the site — no code changes or redeploys needed. Until you set them in the dashboard, the site falls back to sensible defaults defined in `src/lib/site-config.ts`.
 
 ### Translating content
